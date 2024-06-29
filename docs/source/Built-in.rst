@@ -9,7 +9,7 @@ These are functions that dont need to be loaded with *loadlib()*.
 
   instance Lime.CreateWindow(name:string, icon:number)
 
-This function creates an returns an app, the icon is not needed for this function
+This function creates and returns an app, the icon is not needed for this function
 
 ----
 
