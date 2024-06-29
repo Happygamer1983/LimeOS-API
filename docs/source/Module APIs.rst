@@ -119,7 +119,7 @@ This function returns the children of a directory
   bool FileSystem.WriteFile(path:string, data:string, user:string, plaintext:bool)
 
 This function writes new data to a file, set ``plaintext`` to true to disable encryption (not really supported)
-**Set ``user:string`` to ``nil``**
+**Set** ``user:string`` **to** ``nil``
 
 ----
 
