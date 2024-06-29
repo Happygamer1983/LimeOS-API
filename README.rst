@@ -1,9 +1,6 @@
-Template for the Read the Docs tutorial
-=======================================
+LimeOS 3 API
+============
 
-This GitHub template includes fictional Python library
-with some basic Sphinx docs.
+Find the API here:
 
-Read the tutorial here:
-
-https://docs.readthedocs.io/en/stable/tutorial/
+https://limeos-api.readthedocs.io/
