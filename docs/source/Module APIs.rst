@@ -114,7 +114,7 @@ This function
 
 .. code-block:: luau  
 
-  bool FileSystem.WriteFile(path:string, data:, user:string)
+  bool FileSystem.WriteFile(path:string, data:string, user:string)
 
 This function 
 
