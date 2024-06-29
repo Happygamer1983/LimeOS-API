@@ -203,3 +203,387 @@ This function removes the last character from a path and returns the new path
 This function removes not allowed characters from a path and returns the cleaned path
 
 ----
+
+
+
+
+Kernel
+==========
+
+.. code-block:: luau  
+
+  nil Kernel.MemAlloc(memamount:number)
+
+This function allowcates memory from system memory
+
+----
+
+.. code-block:: luau  
+
+  nil Kernel.MemDealloc(memamount:number)
+
+This function deallocates memory from system memory
+
+----
+
+.. code-block:: luau  
+
+  nil Kernel.MemUpdate(applicationdata:table)
+
+This function updates the memory used by apps
+
+----
+
+.. code-block:: luau  
+
+  number Kernel.ReturnMem(returnmax:bool)
+
+This function returns the used amount of memory, if ``returnmax:bool`` is set to ``true`` it returns the amount of memory the system has
+
+----
+
+.. code-block:: luau  
+
+  number Kernel.MemCalc(application:instance)
+
+This function calculates the amount of memory used by an app
+
+----
+
+.. code-block:: luau  
+
+  nil Kernel.SystemBugCheck(errorcode:string)
+
+This function crashes the system and creates a dump file
+This file can be found at: */System/Dumps/*
+
+----
+
+.. code-block:: luau  
+
+  nil Kernel.SystemStart(systemrestart:bool)
+
+This function starts the system and loads everything requered
+
+----
+
+.. code-block:: luau  
+
+  nil Kernel.SystemShutdown()
+
+This function shuts down the system or restarts it if ``systemrestart:bool`` is set to ``true``
+
+----
+
+
+
+
+
+
+AccountManager
+==========
+
+.. code-block:: luau  
+
+  nil AccountManager.CreateAccount(username:string, pin:number, permissions:string)
+
+This function creates a new user account
+
+----
+
+.. code-block:: luau  
+
+  nil AccountManager.DeleteAccount(username:string)
+
+This function deletes a user account
+
+----
+
+.. code-block:: luau  
+
+  bool AccountManager.SetAccountPIN(username:string oldpin:number, newpin:number)
+
+This function updates the pin on a user account
+
+----
+
+
+
+
+
+NotificationManager
+==========
+
+.. code-block:: luau  
+
+  nil NotificationManager.SendNotification(title:string, body:string)
+
+This function sends a side notification
+
+----
+
+
+
+
+
+ApplicationManager
+==========
+
+.. code-block:: luau  
+
+  nil ApplicationManager.GetProcesses()
+
+This function returns all open processes
+
+----
+
+.. code-block:: luau  
+
+  nil ApplicationManager.ExecuteLEF(lefdata:string)
+
+This function executes LEF files
+
+----
+
+.. code-block:: luau  
+
+  nil ApplicationManager.UpdateProcess(processid:string, toupdate:string, data:string)
+
+This function updates a specified property of an process
+
+----
+
+.. code-block:: luau  
+
+  instance ApplicationManager.StartProcess(processname:string, processdata:table)
+
+This function starts a new process and returns the app obj for it
+
+----
+
+.. code-block:: luau  
+
+  nil ApplicationManager.ExitProcess(processid:string)
+
+This function closes a process
+
+----
+
+.. code-block:: luau  
+
+  nil ApplicationManager.CloseAllProcesses()
+
+This function closes all open processes
+
+----
+
+
+
+
+
+DesktopManager
+==========
+
+.. code-block:: luau  
+
+  nil DesktopManager.LogOut()
+
+This function logs the currently logged-in user out
+
+----
+
+.. code-block:: luau  
+
+  nil DesktopManager.InitDesktop()
+
+This function starts the desktop
+
+----
+
+.. code-block:: luau  
+
+  nil DesktopManager.LoginSetup()
+
+This function starts the login screen
+
+----
+
+.. code-block:: luau  
+
+  nil DesktopManager.UpdateWallpaper()
+
+This function updates the desktop wallpaper
+
+----
+
+
+
+
+
+RegistryHandler
+==========
+
+.. code-block:: luau  
+
+  bool RegistryHandler.CreateKey(key:string, data:string)
+
+This function creates a new registry key
+
+----
+
+.. code-block:: luau  
+
+  bool RegistryHandler.DeleteKey(key:string)
+
+This function deletes a registry key
+
+----
+
+.. code-block:: luau  
+
+  nil RegistryHandler.SetKey(key:string, data:string)
+
+This function updates the data of a registry key
+
+----
+
+.. code-block:: luau  
+
+  table RegistryHandler.GetKey(key:string)
+
+This function returns a registry key
+
+----
+
+.. code-block:: luau  
+
+  nil RegistryHandler.SaveRegistry()
+
+This function saves the registry
+
+----
+
+.. code-block:: luau  
+
+  nil RegistryHandler.LoadRegistry()
+
+This function loads the registry
+
+----
+
+.. code-block:: luau  
+
+  nil RegistryHandler.InitRegistry()
+
+This function sets up the registry
+
+----
+
+
+
+
+
+ClockManager
+==========
+
+.. code-block:: luau  
+
+  nil ClockManager.nil()
+
+This module is ``WIP``
+
+----
+
+
+
+
+
+ExecutableHost
+==========
+
+.. code-block:: luau  
+
+  number ExecutableHost.readlef(data:string)
+
+This function reads LEF files
+
+----
+
+.. code-block:: luau  
+
+  string ExecutableHost.createlef(code:string, admin:bool, publisher:string, env:table)
+
+This function creates new LEF files
+
+----
+
+.. code-block:: luau  
+
+  string ExecutableHost.createlefraw(code:string, admin:bool, publisher:string)
+
+This function creates new LEF files
+
+----
+
+.. code-block:: luau  
+
+  number ExecutableHost.selftest()
+
+``nil``
+
+----
+
+
+
+
+
+Http
+==========
+
+.. code-block:: luau  
+
+  unknown Http.HttpGet(url, nocache, headers, contentType, requestType)
+
+This function makes http Get requests
+
+----
+
+.. code-block:: luau  
+
+  unknown Http.HttpPost(url, data, content_type, compress, headers)
+
+This function makes http Post requests
+
+----
+
+.. code-block:: luau  
+
+  string Http.JSONEncode(data:table)
+
+This function JSON encodes tables to strings and returns them
+
+----
+
+.. code-block:: luau  
+
+  table Http.JSONDecode(data:string)
+
+This function JSON decodes JSON encoded tables and returns a table
+
+----
+
+
+
+
+
+EnvTable
+==========
+
+.. code-block:: luau  
+
+  nil EnvTable.nil()
+
+``nil``
+
+----
+
