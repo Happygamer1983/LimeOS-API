@@ -12,7 +12,7 @@ FileSystem
 
   table FileSystem.GetPartitions()
 
-This function returns all partition on LimeOS
+This function returns all partitions on LimeOS
 
 ----
 
@@ -52,7 +52,7 @@ This function creates a partition and returns it
 
   bool FileSystem.DelPartition(partition:string)
 
-This function delets a partition
+This function deletes a partition
 
 ----
 
