@@ -42,7 +42,7 @@ This function
 
 .. code-block:: luau  
 
-  table FileSystem.CreatePartition(name:string, PartitionSize:number, IsOSDrive:boolean)
+  table FileSystem.CreatePartition(name:string, PartitionSize:number, IsOSDrive:bool)
 
 This function 
 
@@ -50,7 +50,7 @@ This function
 
 .. code-block:: luau  
 
-  boolean FileSystem.DelPartition(partition:string)
+  bool FileSystem.DelPartition(partition:string)
 
 This function 
 
@@ -74,7 +74,7 @@ This function
 
 .. code-block:: luau  
 
-  boolean FileSystem.CheckPermissions(path:string, user:string, permissiontype:string)
+  bool FileSystem.CheckPermissions(path:string, user:string, permissiontype:string)
 
 This function 
 
@@ -90,7 +90,7 @@ This function
 
 .. code-block:: luau  
 
-  boolean FileSystem.FileExists(path:string)
+  bool FileSystem.FileExists(path:string)
 
 This function 
 
@@ -114,7 +114,7 @@ This function
 
 .. code-block:: luau  
 
-  boolean FileSystem.WriteFile(path:string, data:, user:string)
+  bool FileSystem.WriteFile(path:string, data:, user:string)
 
 This function 
 
@@ -146,7 +146,7 @@ This function
 
 .. code-block:: luau  
 
-  boolean FileSystem.HasAttribute(path:string, attribute:string)
+  bool FileSystem.HasAttribute(path:string, attribute:string)
 
 This function 
 
