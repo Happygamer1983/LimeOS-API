@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'LimeOS API'
+copyright = '2024 Happygamer1983'
+author = 'Happygamer1983'
 
 release = '0.1'
 version = '0.1.0'
