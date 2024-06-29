@@ -6,4 +6,3 @@ These are functions that dont need to be loaded with *loadlib()*.
   
   instance Lime.CreateWindow(name, icon)
 
-test
