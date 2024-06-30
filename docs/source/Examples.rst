@@ -46,3 +46,35 @@ Heres the complete code without the comments
   TextLabel.TextColor3 = Color3.fromRGB(255,255,255)
   TextLabel.Position = UDim2.new(0.25, 0, 0.4, 0)
 
+----
+
+Using the FileSystem
+====================
+Another important part of App development is storing or reading data from the :doc:`FileSystem API </Module APIs/FileSystem>`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
