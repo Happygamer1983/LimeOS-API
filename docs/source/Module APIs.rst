@@ -293,6 +293,14 @@ AccountManager
 
 .. code-block:: luau  
 
+  string AccountManager.GetCurrentUser()
+
+This function returns the currently logged-in user
+
+----
+
+.. code-block:: luau  
+
   nil AccountManager.CreateAccount(username:string, pin:number, permissions:string)
 
 This function creates a new user account
