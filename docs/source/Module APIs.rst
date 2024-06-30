@@ -7,11 +7,11 @@ To use these modules and the function in them load them ``loadlib()``.
 
 FileSystem
 ==========
-The FileSystem uses a set of 4 permissions, they need to be in a set format to be used correctly. "\n"
-``R = Read, W = Write, D = Delete, A = Admin``. "\n"
-When you only need one permission only use "R" or "D". "\n"
-When you need more that one permission seperate them with - ``"R-W-D"``. "\n"
-Permissions only effect changes to a fileobj such as deleting or writing. "\n"
+The FileSystem uses a set of 4 permissions, they need to be in a set format to be used correctly. |
+``R = Read, W = Write, D = Delete, A = Admin``. |
+When you only need one permission only use "R" or "D". |
+When you need more that one permission seperate them with - ``"R-W-D"``. |
+Permissions only effect changes to a fileobj such as deleting or writing. |
 
 
 .. code-block:: luau  
