@@ -50,7 +50,7 @@ Heres the complete code without the comments
 
 Using other Modules
 ===================
-Another important part of App development is storing or reading data from the :doc:`FileSystem API <Module APIs>`
+Another important part of App development is storing or reading data from the :doc:`FileSystem API <Module APIs>`.
 To use the non builtin modules we first need to load them with ``loadlib()`` , so lets do that
 
 .. code-block:: luau  
@@ -59,7 +59,7 @@ To use the non builtin modules we first need to load them with ``loadlib()`` , s
   local AccountManager = loadlib("AccountManager") -- Here we load and strore the AccountManager module
   local NotificationManager = loadlib("NotificationManager") -- Here we load and strore the NotificationManager module
 
-Now that we have acess to the functions of the FileSystem module we can modify our newly created app to have a button
+Now that we have acess to the functions of the FileSystem module we can modify our newly created app
 
 .. code-block:: luau  
 
@@ -74,7 +74,7 @@ Now that we have acess to the functions of the FileSystem module we can modify o
   TextButton.Position = UDim2.new(0.25, 0, 0.4, 0)
 
 Now that we have a TextButton, we can make it do things.
-When we press the button we ill create a .txt file in the users directory and send a Notification that the file has been created.
+When we press the button we'll create a .txt file in the users directory and send a Notification that the file has been created.
 
 .. code-block:: luau  
 
