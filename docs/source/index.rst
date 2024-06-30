@@ -10,3 +10,4 @@ Contents
 
    Built-in
    Module APIs
+   Examples
