@@ -3,15 +3,18 @@ Module API
 ==========
 To use these modules and the function in them load them ``loadlib()``.
 
+.. role:: raw-html(raw)
+    :format: html
+
 ----
 
 FileSystem
 ==========
-The FileSystem uses a set of 4 permissions, they need to be in a set format to be used correctly. |
-``R = Read, W = Write, D = Delete, A = Admin``. |
-When you only need one permission only use "R" or "D". |
-When you need more that one permission seperate them with - ``"R-W-D"``. |
-Permissions only effect changes to a fileobj such as deleting or writing. |
+The FileSystem uses a set of 4 permissions, they need to be in a set format to be used correctly. :raw-html:`<br />`
+``R = Read, W = Write, D = Delete, A = Admin``. :raw-html:`<br />`
+When you only need one permission only use "R" or "D". :raw-html:`<br />`
+When you need more that one permission seperate them with - ``"R-W-D"``. :raw-html:`<br />`
+Permissions only effect changes to a fileobj such as deleting or writing. :raw-html:`<br />`
 
 
 .. code-block:: luau  
