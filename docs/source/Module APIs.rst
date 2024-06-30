@@ -12,7 +12,7 @@ FileSystem
 ==========
 The FileSystem uses a set of 4 permissions, they need to be in a set format to be used correctly. :raw-html:`<br />`
 ``R = Read, W = Write, D = Delete, A = Admin``. :raw-html:`<br />`
-When setting permissions, seperate them with a - (``"R-W-D"``) when using multible, otherwise just a singular permission (``"R"`` or ``"D"``) :raw-html:`<br />`
+When setting permissions, seperate them with a - when using multible (``"R-W-D"``), otherwise just a singular permission (``"R"`` or ``"D"``) :raw-html:`<br />`
 Permissions only effect changes to a fileobj such as deleting or writing. :raw-html:`<br />`
 
 
