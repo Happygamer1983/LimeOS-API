@@ -327,6 +327,52 @@ This function updates the pin on a user account
 
 
 
+NetworkManager
+==========
+
+.. code-block:: luau  
+
+  nil NetworkManager.NetConnect()
+
+This function connects the system to the network
+
+----
+
+.. code-block:: luau  
+
+  nil NetworkManager.NetDisconnect()
+
+This function disconnect the system to the network
+
+----
+
+.. code-block:: luau  
+
+  nil NetworkManager.Post(ToIP, Data)
+
+This function sends data to a specified IP
+
+----
+
+.. code-block:: luau  
+
+  nil NetworkManager.Receive(callback)
+
+This function calls the specified callback function when data has been received
+
+----
+
+.. code-block:: luau  
+
+  nil NetworkManager.NetStatus(callback)
+
+This function returns the connection status of the system, true = connected, false = not connected
+
+----
+
+
+
+
 NotificationManager
 ==========
 
