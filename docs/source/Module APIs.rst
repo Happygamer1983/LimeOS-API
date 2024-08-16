@@ -586,20 +586,6 @@ This function sets up the registry
 
 
 
-ClockManager
-==========
-
-.. code-block:: luau  
-
-  nil ClockManager.nil()
-
-This module is ``WIP``
-
-----
-
-
-
-
 
 ExecutableHost
 ==========
