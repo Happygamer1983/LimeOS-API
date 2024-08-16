@@ -387,6 +387,47 @@ This function sends a side notification
 
 
 
+ClockManager
+==========
+
+.. code-block:: luau  
+
+  number ClockManager.ConvertTime(Value:number, From:string, To:string)
+
+This function converts the gives value from one format to another, eg. Seconds to Minutes, the function will return ``-1`` if the ``From`` or ``To`` value couldnt be found :raw-html:`<br />`
+These are all avalible formats: :raw-html:`<br />`
+``"second"``, :raw-html:`<br />`
+``"minute"``, :raw-html:`<br />`
+``"hour"``, :raw-html:`<br />`
+``"day"``, :raw-html:`<br />`
+``"week"``, :raw-html:`<br />`
+``"month"``, :raw-html:`<br />`
+``"year"``, :raw-html:`<br />`
+
+----
+
+.. code-block:: luau  
+
+  number ClockManager.CurrentTime(FormatString:string)
+
+This function returns a formatted version of the current time/date, without any ``FormatString`` provided it returns ``Hour:Minute`` in 24 Hour time :raw-html:`<br />`
+These are the diffrent formats: :raw-html:`<br />`
+``"%Y" = Year``, :raw-html:`<br />`
+``"%m" = Month ``, :raw-html:`<br />`
+``"%d" = Day``, :raw-html:`<br />`
+``"%H" = Hour (24-hour clock)``, :raw-html:`<br />`
+``"%I" = Hour (12-hour clock)``, :raw-html:`<br />`
+``"%M" = Minute``, :raw-html:`<br />`
+``"%S" = Second``, :raw-html:`<br />`
+``"%p" = AM/PM``, :raw-html:`<br />`
+
+----
+
+
+
+
+
+
 
 ApplicationManager
 ==========
