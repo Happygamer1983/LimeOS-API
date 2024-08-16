@@ -348,7 +348,7 @@ This function disconnect the system to the network
 
 .. code-block:: luau  
 
-  nil NetworkManager.Post(ToIP, Data)
+  nil NetworkManager.Post(ToIP:string, Data:any)
 
 This function sends data to a specified IP
 
@@ -356,7 +356,7 @@ This function sends data to a specified IP
 
 .. code-block:: luau  
 
-  nil NetworkManager.Receive(callback)
+  function NetworkManager.Receive(callback:function)
 
 This function calls the specified callback function when data has been received
 
@@ -364,7 +364,7 @@ This function calls the specified callback function when data has been received
 
 .. code-block:: luau  
 
-  nil NetworkManager.NetStatus(callback)
+  bool NetworkManager.NetStatus(callback)
 
 This function returns the connection status of the system, true = connected, false = not connected
 
