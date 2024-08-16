@@ -364,7 +364,7 @@ This function calls the specified callback function when data has been received
 
 .. code-block:: luau  
 
-  bool NetworkManager.NetStatus(callback)
+  bool NetworkManager.NetStatus()
 
 This function returns the connection status of the system, true = connected, false = not connected
 
