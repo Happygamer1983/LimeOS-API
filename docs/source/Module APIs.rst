@@ -408,7 +408,7 @@ These are all avalible formats: :raw-html:`<br />`
 
 .. code-block:: luau  
 
-  number ClockManager.CurrentTime(FormatString:string)
+  string ClockManager.CurrentTime(FormatString:string)
 
 This function returns a formatted version of the current time/date, without any ``FormatString`` provided it returns ``Hour:Minute`` in 24 Hour time :raw-html:`<br />`
 These are the diffrent formats: :raw-html:`<br />`
