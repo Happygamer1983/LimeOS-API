@@ -413,7 +413,7 @@ These are all avalible formats: :raw-html:`<br />`
 This function returns a formatted version of the current time/date, without any ``FormatString`` provided it returns ``Hour:Minute`` in 24 Hour time :raw-html:`<br />`
 These are the diffrent formats: :raw-html:`<br />`
 ``"%Y" = Year``, :raw-html:`<br />`
-``"%m" = Month ``, :raw-html:`<br />`
+``"%m" = Month``, :raw-html:`<br />`
 ``"%d" = Day``, :raw-html:`<br />`
 ``"%H" = Hour (24-hour clock)``, :raw-html:`<br />`
 ``"%I" = Hour (12-hour clock)``, :raw-html:`<br />`
