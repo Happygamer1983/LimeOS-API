@@ -11,14 +11,3 @@ python:
 
 sphinx:
   configuration: docs/source/conf.py
-
-nav:
-  - Home: docs/source/index.rst
-  - Built-in API: docs/source/Built-in.rst
-   
-theme:
-    name: readthedocs
-    include_homepage_in_sidebar: false
-    highlightjs: true
-    hijs_languages:
-        - lua
