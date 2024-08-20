@@ -11,3 +11,21 @@ python:
 
 sphinx:
   configuration: docs/source/conf.py
+
+site_name: Test
+nav:
+   - 'index.rst'
+   - 'glossary.md'
+   - 'Subject1':
+     - 'dir/file1.md'
+     - 'dir/file2.md'
+   - 'Subject2':
+     - 'NestedSubject2_1':
+       - 'dir/file1.md'
+       - 'dir/file2.md'
+theme:
+    name: readthedocs
+    include_homepage_in_sidebar: false
+    highlightjs: true
+    hijs_languages:
+        - lua
