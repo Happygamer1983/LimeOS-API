@@ -1,3 +1,4 @@
+==========
 The Basics
 ==========
 
@@ -117,7 +118,7 @@ Now lets put everthing together
     NotificationManager.SendNotification("Tutorial", "New File created!")
   end)
 
-
+==================
 Advanced functions
 ==================
 
