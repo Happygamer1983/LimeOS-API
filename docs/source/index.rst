@@ -7,7 +7,11 @@ Contents
 --------
 
 .. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: APIs
 
-   Built-in
-   Module APIs
-   Examples
+   /Built-in.rst
+   /Module APIs.rst
+
+ 
