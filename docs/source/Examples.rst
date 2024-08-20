@@ -1,5 +1,6 @@
 The Basics
 ==========
+
 Here are some small code examples which you can use in your projects
 
 ----
