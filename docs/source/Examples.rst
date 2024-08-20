@@ -1,12 +1,11 @@
-========
-Examples
-========
+The Basics
+----------
 Here are some small code examples which you can use in your projects
 
 ----
 
 Creating an App
-===============
+~~~~~~~~~~~~~~~
 
 To create an app we only need the :doc:`Built-in`
  
@@ -49,7 +48,7 @@ Heres the complete code without the comments
 ----
 
 Using other Modules
-===================
+~~~~~~~~~~~~~~~~~~~
 Another important part of App development is storing or reading data from the :doc:`FileSystem API <Module APIs>`.
 To use the non builtin modules we first need to load them with ``loadlib()`` , so lets do that
 
@@ -117,7 +116,11 @@ Now lets put everthing together
     NotificationManager.SendNotification("Tutorial", "New File created!")
   end)
 
-========
-Test eee
-========
+
+Advanced functions
+------------------
+
+
+Smth
+~~~~
 
