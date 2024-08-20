@@ -12,8 +12,8 @@ python:
 sphinx:
   configuration: docs/source/conf.py
 
-nav:
-   - 'index.rst'
+ - Home: 'docs/source/index.rst'
+ - Built-in API: 'docs/source/Built-in.rst'
    
 theme:
     name: readthedocs
