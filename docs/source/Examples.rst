@@ -1,5 +1,5 @@
 The Basics
-----------
+==========
 Here are some small code examples which you can use in your projects
 
 ----
@@ -118,9 +118,12 @@ Now lets put everthing together
 
 
 Advanced functions
-------------------
+==================
 
 
 Smth
-~~~~
+----
+
+Smth 2
+~~~~~~
 
