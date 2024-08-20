@@ -12,7 +12,6 @@ python:
 sphinx:
   configuration: docs/source/conf.py
 
-site_name: Test
 nav:
    - 'index.rst'
    - 'glossary.md'
