@@ -10,205 +10,218 @@ To use these modules and the function in them load them ``loadlib()``.
 
 FileSystem
 ==========
-The FileSystem uses a set of 4 permissions, they need to be in a set format to be used correctly. :raw-html:`<br />`
-``R = Read, W = Write, D = Delete, A = Admin``. :raw-html:`<br />`
-When setting permissions, seperate them with a - when using multible (``"R-W-D"``), otherwise just a singular permission (``"R"`` or ``"D"``) :raw-html:`<br />`
-Permissions only effect changes to a fileobj such as deleting or writing or when creating new ones. :raw-html:`<br />`
+The FileSystem module utilizes four distinct permissions: R = Read, W = Write, D = Delete, and A = Admin. :raw-html:<br /> 
+Permissions should be formatted correctly, with multiple permissions separated by a hyphen (e.g., "R-W-D"). For single permissions, simply use the corresponding letter (e.g., "R" or "D"). :raw-html:<br /> 
+These permissions govern actions such as reading, writing, deleting, and creating file objects. :raw-html:<br />
 
 
 .. code-block:: luau  
 
-  table FileSystem.GetPartitions()
+    FileSystem.GetPartitions() -> table
 
-This function returns all partitions on LimeOS
+Returns a table of all partitions in LimeOS.
 
 ----
 
 .. code-block:: luau  
 
-  string FileSystem.GetOSDriveLetter()
+    FileSystem.GetOSDriveLetter() -> string
 
-This function returns the drive letter that LimeOS is installed on
-
-----
-
-.. code-block:: luau  
-
-  table FileSystem.GetPartitionByIndex(index:number)
-
-This function returns a partition
+Returns the partition name where LimeOS is installed on.
 
 ----
 
 .. code-block:: luau  
 
-  table FileSystem.GetPartitionByName(name:string)
+   FileSystem.GetPartitionByIndex(index:number) -> table
 
-This function returns a partition
-
-----
-
-.. code-block:: luau  
-
-  table FileSystem.CreatePartition(name:string, PartitionSize:number, IsOSDrive:bool)
-
-This function creates a partition and returns it
+Returns a partition based on an number index. :raw-html:`<br />`
+``index`` A number index of all partitions. (e.g., 2 will always get the 2nd partition) :raw-html:`<br />`
 
 ----
 
 .. code-block:: luau  
 
-  bool FileSystem.DelPartition(partition:string)
+   FileSystem.GetPartitionByName(name:string) -> table
 
-This function deletes a partition
-
-----
-
-.. code-block:: luau  
-
-  bool FileSystem.CheckPartitionSize(partition:string, Data:table)
-
-This function checks if a files data still has space on a partition
+Returns a partition based on a string name. :raw-html:`<br />`
+``name`` A string name of a partition. :raw-html:`<br />`
 
 ----
 
 .. code-block:: luau  
 
-  string/table FileSystem.GetUserPermissions(user:string)
+   FileSystem.CreatePartition(name:string, PartitionSize:number, IsOSDrive:bool) -> table
 
-This function returns the permissions of a specified user, leave ``user:string`` blank to get the permissions of the currently logged-in user
-
-----
-
-.. code-block:: luau  
-
-  bool FileSystem.CheckPermissions(path:string, user:string, permissiontype:string)
-
-This function checks if a user has permissions to edit a fileobj, leave ``user:string`` blank to check the currently logged-in user
-Permissions need to be in this format: "R-W"- or "R"
-
+Creates a new partition table and returns it. :raw-html:`<br />`
+``name`` A string name of the new partition. :raw-html:`<br />`
+``PartitionSize`` A number size in MB for the new partition. :raw-html:`<br />`
+``IsOSDrive`` A bool value, of LimeOS is installed on that partition. :raw-html:`<br />`
+ **Warning:** Do not enter any value for ``IsOSDrive`` **Warning:** :raw-html:`<br />`
 
 ----
 
 .. code-block:: luau  
 
-  number FileSystem.CalculateObjectSize(path:string)
+   FileSystem.DelPartition(partition:string) -> bool
 
-This function returns the size of a files data on KB or MB
-
-----
-
-.. code-block:: luau  
-
-  bool FileSystem.FileExists(path:string)
-
-This function checks if a fileobj exists
+Deletes a partition based on a string name. The function will return ``true`` if the deletion was successful :raw-html:`<br />`
+``partition`` A string name for the to be deleted partition. :raw-html:`<br />`
 
 ----
 
 .. code-block:: luau  
 
-  table FileSystem.GetFile(path:string)
+   FileSystem.CheckPartitionSize(partition:string, Data:table) -> bool
 
-This function returns a fileobj
-
-----
-
-.. code-block:: luau  
-
-  table FileSystem.GetFiles(path:string)
-
-This function returns the children of a directory
+Retuns ``true`` when there is still space on the partition for the provided data.
+``partition`` A string name for the to be checked partition. :raw-html:`<br />`
+``Data`` A data table. :raw-html:`<br />`
 
 ----
 
 .. code-block:: luau  
 
-  bool FileSystem.WriteFile(path:string, data:string, user:string, plaintext:bool)
+    FileSystem.GetUserPermissions(user:string) ->  string/table
 
-This function writes new data to a file, set ``plaintext`` to true to disable encryption (not really supported)
-**Set** ``user:string`` **to** ``nil``
-
-----
-
-.. code-block:: luau  
-
-  table FileSystem.CreateFile(path:string, type:string, permissions:string, Owner:string)
-
-This function creates a new file, the file name is the last part of the path
-.path/**filename**.ext
+Returns the permissions of the user.
+``user`` A string name for the user. :raw-html:`<br />`
+**Warning:** Do not enter any value for ``user`` **Warning:** :raw-html:`<br />`
 
 ----
 
 .. code-block:: luau  
 
-  table FileSystem.CreateDirectory(path:string, permissions:string, Owner:string)
+   FileSystem.CheckPermissions(path:string, user:string, permissiontype:string) -> bool
 
-This function creates a new directory
+Checks if the user has the same permissions as the provided permissions.
+``path`` A string for the path. :raw-html:`<br />`
+``user`` A string name for the user. :raw-html:`<br />`
+``permissiontype`` A string the checked permissions. :raw-html:`<br />`
+**Warning:** Do not enter any value for ``user``, only enter ``nil`` as a value **Warning:** :raw-html:`<br />`
 
-----
-
-.. code-block:: luau  
-
-  bool FileSystem.DeleteObject(path:string)
-
-This function delets a fileobj
 
 ----
 
 .. code-block:: luau  
 
-  bool FileSystem.HasAttribute(path:string, attribute:string)
+   FileSystem.CalculateObjectSize(path:string) -> number
 
-This function checks if a fileobj has a certain attribute
-
-----
-
-.. code-block:: luau  
-
-  table FileSystem.SetAttribute(path:string, attribute:string)
-
-This function sets a fileobj attributes
+Returns the KB or MB size of a file object based on a provided path.
 
 ----
 
 .. code-block:: luau  
 
-  string FileSystem.RemoveLastItemOfPath(path:string)
+   FileSystem.FileExists(path:string) -> bool
 
-This function removes the last item from a path, seperated by ``/`` and returns the new path
-
-----
-
-.. code-block:: luau  
-
-  string FileSystem.GetFinalObjectName(path:string)
-
-This function returns the last item from a path, seperated by ``/`` and returns the last item
+Checks if a file object exists based on a provided path.
 
 ----
 
 .. code-block:: luau  
 
-  string FileSystem.GetFileExtension(path:string, fileobj:table)
+   FileSystem.GetFile(path:string) -> table
 
-This function returns the file extension of a file, you can either set a path or a fileobj
-
-----
-
-.. code-block:: luau  
-
-  string FileSystem.RemoveCharacterFromPathEnd(path:string, chartoremove:string)
-
-This function removes the last character from a path and returns the new path
+Returns a file object based on a provided path.
 
 ----
 
 .. code-block:: luau  
 
-  string FileSystem.RemoveFileNameNotAllowedCharacters(path:string)
+   FileSystem.GetFiles(path:string) -> table
 
-This function removes not allowed characters from a path and returns the cleaned path
+Returns the files inside a directory object based on a provided path.
+
+----
+
+.. code-block:: luau  
+
+   FileSystem.WriteFile(path:string, data:string, user:string, plaintext:bool) -> bool
+
+Writes new data to a file object based on a provided path.
+--This function writes new data to a file, set ``plaintext`` to true to disable encryption (not really supported)
+--**Set** ``user:string`` **to** ``nil``
+
+----
+
+.. code-block:: luau  
+
+   FileSystem.CreateFile(path:string, type:string, permissions:string, Owner:string) -> table
+
+Creates and retuns a new file object, and placing it in the provided path.
+
+----
+
+.. code-block:: luau  
+
+   FileSystem.CreateDirectory(path:string, permissions:string, Owner:string) -> table
+
+Creates and retuns a new directory object, and placing it in the provided path.
+
+----
+
+.. code-block:: luau  
+
+   FileSystem.DeleteObject(path:string) -> bool
+
+Delets a file or directory object based on a provided path.
+
+----
+
+.. code-block:: luau  
+
+   FileSystem.HasAttribute(path:string, attribute:string) -> bool
+
+Checks if a file or directory object has a certain Attribute.
+
+----
+
+.. code-block:: luau  
+
+   FileSystem.SetAttribute(path:string, attribute:string) -> table
+
+Creates or sets a new Attribute for a file or directory object.
+
+----
+
+.. code-block:: luau  
+
+   FileSystem.RemoveLastItemOfPath(path:string) -> string
+
+Returns a modified string, where the string past the last ``/`` is cut. (e.g., "C:/System/Test" -> "C:/System")
+
+----
+
+.. code-block:: luau  
+
+   FileSystem.GetFinalObjectName(path:string) -> string
+
+Returns a modified string, where the string before the last ``/`` is cut. (e.g., "C:/System/Test" -> "Test")
+
+----
+
+.. code-block:: luau  
+
+   FileSystem.GetFileExtension(path:string, fileobj:table) -> string
+
+Returns the string file extension of a provided path (e.g., "C:/System/Test.txt" -> "txt")
+
+----
+
+.. code-block:: luau  
+
+   FileSystem.RemoveCharacterFromPathEnd(path:string, chartoremove:string) -> string
+
+Returns a modified string, where the last character is cut. (e.g., "C:/System/" -> "C:/System")
+
+----
+
+.. code-block:: luau  
+
+   FileSystem.RemoveFileNameNotAllowedCharacters(path:string) -> string
+
+Returns a modified string, where any non allowed characters are removed or replaced with underscores. (e.g., "Hello #World" -> "Hello_World")
 
 ----
 
@@ -220,7 +233,7 @@ Kernel
 
 .. code-block:: luau  
 
-  nil Kernel.MemAlloc(memamount:number)
+   Kernel.MemAlloc(memamount:number) -> nil
 
 This function allowcates memory from system memory
 
@@ -228,7 +241,7 @@ This function allowcates memory from system memory
 
 .. code-block:: luau  
 
-  nil Kernel.MemDealloc(memamount:number)
+   Kernel.MemDealloc(memamount:number) -> nil
 
 This function deallocates memory from system memory
 
@@ -236,7 +249,7 @@ This function deallocates memory from system memory
 
 .. code-block:: luau  
 
-  nil Kernel.MemUpdate(applicationdata:table)
+   Kernel.MemUpdate(applicationdata:table) -> nil
 
 This function updates the memory used by apps
 
@@ -244,7 +257,7 @@ This function updates the memory used by apps
 
 .. code-block:: luau  
 
-  number Kernel.ReturnMem(returnmax:bool)
+   Kernel.ReturnMem(returnmax:bool) -> number
 
 This function returns the used amount of memory, if ``returnmax:bool`` is set to ``true`` it returns the amount of memory the system has
 
@@ -252,7 +265,7 @@ This function returns the used amount of memory, if ``returnmax:bool`` is set to
 
 .. code-block:: luau  
 
-  number Kernel.MemCalc(application:instance)
+   Kernel.MemCalc(application:instance) -> number
 
 This function calculates the amount of memory used by an app
 
@@ -260,7 +273,7 @@ This function calculates the amount of memory used by an app
 
 .. code-block:: luau  
 
-  nil Kernel.SystemBugCheck(errorcode:string)
+   Kernel.SystemBugCheck(errorcode:string) -> nil
 
 This function crashes the system and creates a dump file
 This file can be found at: */System/Dumps/*
@@ -269,7 +282,7 @@ This file can be found at: */System/Dumps/*
 
 .. code-block:: luau  
 
-  nil Kernel.SystemStart(systemrestart:bool)
+   Kernel.SystemStart(systemrestart:bool) -> nil
 
 This function starts the system and loads everything requered
 
@@ -277,7 +290,7 @@ This function starts the system and loads everything requered
 
 .. code-block:: luau  
 
-  nil Kernel.SystemShutdown()
+ Kernel.SystemShutdown() -> nil 
 
 This function shuts down the system or restarts it if ``systemrestart:bool`` is set to ``true``
 
@@ -293,7 +306,7 @@ AccountManager
 
 .. code-block:: luau  
 
-  string AccountManager.GetCurrentUser()
+   AccountManager.GetCurrentUser() -> string
 
 This function returns the currently logged-in user
 
@@ -301,7 +314,7 @@ This function returns the currently logged-in user
 
 .. code-block:: luau  
 
-  nil AccountManager.CreateAccount(username:string, pin:number, permissions:string)
+   AccountManager.CreateAccount(username:string, pin:number, permissions:string) -> nil
 
 This function creates a new user account
 
@@ -309,7 +322,7 @@ This function creates a new user account
 
 .. code-block:: luau  
 
-  nil AccountManager.DeleteAccount(username:string)
+   AccountManager.DeleteAccount(username:string) -> nil
 
 This function deletes a user account
 
@@ -317,7 +330,7 @@ This function deletes a user account
 
 .. code-block:: luau  
 
-  bool AccountManager.SetAccountPIN(username:string oldpin:number, newpin:number)
+   AccountManager.SetAccountPIN(username:string oldpin:number, newpin:number) -> bool
 
 This function updates the pin on a user account
 
@@ -332,7 +345,7 @@ NetworkManager
 
 .. code-block:: luau  
 
-  nil NetworkManager.NetConnect()
+   NetworkManager.NetConnect() -> nil
 
 This function connects the system to the network
 
@@ -340,7 +353,7 @@ This function connects the system to the network
 
 .. code-block:: luau  
 
-  nil NetworkManager.NetDisconnect()
+   NetworkManager.NetDisconnect() -> nil
 
 This function disconnect the system to the network
 
@@ -348,7 +361,7 @@ This function disconnect the system to the network
 
 .. code-block:: luau  
 
-  nil NetworkManager.Post(ToIP:string, Data:any)
+   NetworkManager.Post(ToIP:string, Data:any) -> nil
 
 This function sends data to a specified IP
 
@@ -356,7 +369,7 @@ This function sends data to a specified IP
 
 .. code-block:: luau  
 
-  function NetworkManager.Receive(callback:function)
+   NetworkManager.Receive(callback:function) -> function
 
 This function calls the specified callback function when data has been received
 
@@ -364,7 +377,7 @@ This function calls the specified callback function when data has been received
 
 .. code-block:: luau  
 
-  bool NetworkManager.NetStatus()
+   NetworkManager.NetStatus() -> bool
 
 This function returns the connection status of the system, true = connected, false = not connected
 
@@ -378,7 +391,7 @@ NotificationManager
 
 .. code-block:: luau  
 
-  nil NotificationManager.SendNotification(title:string, body:string)
+   NotificationManager.SendNotification(title:string, body:string) -> nil
 
 This function sends a side notification
 
@@ -392,7 +405,7 @@ ClockManager
 
 .. code-block:: luau  
 
-  number ClockManager.ConvertTime(Value:number, From:string, To:string)
+   ClockManager.ConvertTime(Value:number, From:string, To:string) -> number
 
 This function converts the gives value from one format to another, eg. Seconds to Minutes, the function will return ``-1`` if the ``From`` or ``To`` value couldnt be found :raw-html:`<br />`
 These are all avalible formats: :raw-html:`<br />`
@@ -408,7 +421,7 @@ These are all avalible formats: :raw-html:`<br />`
 
 .. code-block:: luau  
 
-  string ClockManager.CurrentTime(FormatString:string)
+   ClockManager.CurrentTime(FormatString:string) -> string
 
 This function returns a formatted version of the current time/date, without any ``FormatString`` provided it returns ``Hour:Minute`` in 24 Hour time :raw-html:`<br />`
 These are the diffrent formats: :raw-html:`<br />`
@@ -434,7 +447,7 @@ ApplicationManager
 
 .. code-block:: luau  
 
-  nil ApplicationManager.GetProcesses()
+   ApplicationManager.GetProcesses() -> nil
 
 This function returns all open processes
 
@@ -442,7 +455,7 @@ This function returns all open processes
 
 .. code-block:: luau  
 
-  nil ApplicationManager.ExecuteLEF(lefdata:string)
+   ApplicationManager.ExecuteLEF(lefdata:string) -> nil
 
 This function executes LEF files
 
@@ -450,7 +463,7 @@ This function executes LEF files
 
 .. code-block:: luau  
 
-  nil ApplicationManager.UpdateProcess(processid:string, toupdate:string, data:string)
+   ApplicationManager.UpdateProcess(processid:string, toupdate:string, data:string) -> nil
 
 This function updates a specified property of an process
 
@@ -458,7 +471,7 @@ This function updates a specified property of an process
 
 .. code-block:: luau  
 
-  instance ApplicationManager.StartProcess(processname:string, processdata:table)
+   ApplicationManager.StartProcess(processname:string, processdata:table) -> instance
 
 This function starts a new process and returns the app obj for it
 
@@ -466,7 +479,7 @@ This function starts a new process and returns the app obj for it
 
 .. code-block:: luau  
 
-  nil ApplicationManager.ExitProcess(processid:string)
+   ApplicationManager.ExitProcess(processid:string) -> nil
 
 This function closes a process
 
@@ -474,7 +487,7 @@ This function closes a process
 
 .. code-block:: luau  
 
-  nil ApplicationManager.CloseAllProcesses()
+   ApplicationManager.CloseAllProcesses() -> nil
 
 This function closes all open processes
 
@@ -489,7 +502,7 @@ DesktopManager
 
 .. code-block:: luau  
 
-  nil DesktopManager.LogOut()
+   DesktopManager.LogOut() -> nil
 
 This function logs the currently logged-in user out
 
@@ -497,7 +510,7 @@ This function logs the currently logged-in user out
 
 .. code-block:: luau  
 
-  nil DesktopManager.InitDesktop()
+   DesktopManager.InitDesktop() -> nil
 
 This function starts the desktop
 
@@ -505,7 +518,7 @@ This function starts the desktop
 
 .. code-block:: luau  
 
-  nil DesktopManager.LoginSetup()
+   DesktopManager.LoginSetup() -> nil
 
 This function starts the login screen
 
@@ -513,7 +526,7 @@ This function starts the login screen
 
 .. code-block:: luau  
 
-  nil DesktopManager.UpdateWallpaper()
+   DesktopManager.UpdateWallpaper() -> nil
 
 This function updates the desktop wallpaper
 
@@ -528,7 +541,7 @@ RegistryHandler
 
 .. code-block:: luau  
 
-  bool RegistryHandler.CreateKey(key:string, data:string)
+   RegistryHandler.CreateKey(key:string, data:string) -> bool
 
 This function creates a new registry key
 
@@ -536,7 +549,7 @@ This function creates a new registry key
 
 .. code-block:: luau  
 
-  bool RegistryHandler.DeleteKey(key:string)
+   RegistryHandler.DeleteKey(key:string) -> bool
 
 This function deletes a registry key
 
@@ -544,7 +557,7 @@ This function deletes a registry key
 
 .. code-block:: luau  
 
-  nil RegistryHandler.SetKey(key:string, data:string)
+   RegistryHandler.SetKey(key:string, data:string) -> nil
 
 This function updates the data of a registry key
 
@@ -552,7 +565,7 @@ This function updates the data of a registry key
 
 .. code-block:: luau  
 
-  table RegistryHandler.GetKey(key:string)
+   RegistryHandler.GetKey(key:string) -> table
 
 This function returns a registry key
 
@@ -560,7 +573,7 @@ This function returns a registry key
 
 .. code-block:: luau  
 
-  nil RegistryHandler.SaveRegistry()
+   RegistryHandler.SaveRegistry() -> nil
 
 This function saves the registry
 
@@ -568,7 +581,7 @@ This function saves the registry
 
 .. code-block:: luau  
 
-  nil RegistryHandler.LoadRegistry()
+   RegistryHandler.LoadRegistry() -> nil
 
 This function loads the registry
 
@@ -576,7 +589,7 @@ This function loads the registry
 
 .. code-block:: luau  
 
-  nil RegistryHandler.InitRegistry()
+   RegistryHandler.InitRegistry() -> nil
 
 This function sets up the registry
 
@@ -592,7 +605,7 @@ ExecutableHost
 
 .. code-block:: luau  
 
-  number ExecutableHost.readlef(data:string)
+  number ExecutableHost.readlef(data:string) -> 
 
 This function reads LEF files
 
@@ -600,7 +613,7 @@ This function reads LEF files
 
 .. code-block:: luau  
 
-  string ExecutableHost.createlef(code:string, admin:bool, publisher:string, env:table)
+  string ExecutableHost.createlef(code:string, admin:bool, publisher:string, env:table) -> 
 
 This function creates new LEF files
 
@@ -608,7 +621,7 @@ This function creates new LEF files
 
 .. code-block:: luau  
 
-  string ExecutableHost.createlefraw(code:string, admin:bool, publisher:string)
+  string ExecutableHost.createlefraw(code:string, admin:bool, publisher:string) -> 
 
 This function creates new LEF files
 
@@ -616,7 +629,7 @@ This function creates new LEF files
 
 .. code-block:: luau  
 
-  number ExecutableHost.selftest()
+  number ExecutableHost.selftest() -> 
 
 ``nil``
 
@@ -631,7 +644,7 @@ Http
 
 .. code-block:: luau  
 
-  unknown Http.HttpGet(url, nocache, headers, contentType, requestType)
+  unknown Http.HttpGet(url, nocache, headers, contentType, requestType) -> 
 
 This function makes http Get requests
 
@@ -639,7 +652,7 @@ This function makes http Get requests
 
 .. code-block:: luau  
 
-  unknown Http.HttpPost(url, data, content_type, compress, headers)
+  unknown Http.HttpPost(url, data, content_type, compress, headers) -> 
 
 This function makes http Post requests
 
@@ -647,7 +660,7 @@ This function makes http Post requests
 
 .. code-block:: luau  
 
-  string Http.JSONEncode(data:table)
+  string Http.JSONEncode(data:table) -> 
 
 This function JSON encodes tables to strings and returns them
 
@@ -655,7 +668,7 @@ This function JSON encodes tables to strings and returns them
 
 .. code-block:: luau  
 
-  table Http.JSONDecode(data:string)
+  table Http.JSONDecode(data:string) -> 
 
 This function JSON decodes JSON encoded tables and returns a table
 
@@ -670,7 +683,7 @@ EnvTable
 
 .. code-block:: luau  
 
-  nil EnvTable.nil()
+  nil EnvTable.nil() -> 
 
 ``nil``
 
