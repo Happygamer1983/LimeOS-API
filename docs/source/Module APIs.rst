@@ -86,7 +86,7 @@ Retuns ``true`` when there is still space on the partition for the provided data
 
 Returns the permissions of the user.
 ``user`` A string name for the user. :raw-html:`<br />`
-**Warning** Do not enter any value for ``user`` **Warning:** :raw-html:`<br />`
+ **Warning** Do not enter any value for ``user`` **Warning:** :raw-html:`<br />`
 
 ----
 
@@ -98,7 +98,7 @@ Checks if the user has the same permissions as the provided permissions.
 ``path`` A string for the path. :raw-html:`<br />`
 ``user`` A string name for the user. :raw-html:`<br />`
 ``permissiontype`` A string the checked permissions. :raw-html:`<br />`
-**Warning:** Do not enter any value for ``user``, only enter ``nil`` as a value **Warning** :raw-html:`<br />`
+ **Warning:** Do not enter any value for ``user``, only enter ``nil`` as a value **Warning** :raw-html:`<br />`
 
 
 ----
