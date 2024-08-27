@@ -57,7 +57,7 @@ Creates a new partition table and returns it. :raw-html:`<br />`
 ``name`` A string name of the new partition. :raw-html:`<br />`
 ``PartitionSize`` A number size in MB for the new partition. :raw-html:`<br />`
 ``IsOSDrive`` A bool value, of LimeOS is installed on that partition. :raw-html:`<br />`
- **Warning:** Do not enter any value for ``IsOSDrive`` **Warning** :raw-html:`<br />`
+ **Warning** Do not enter any value for ``IsOSDrive`` **Warning** :raw-html:`<br />`
 
 ----
 
@@ -86,7 +86,7 @@ Retuns ``true`` when there is still space on the partition for the provided data
 
 Returns the permissions of the user.
 ``user`` A string name for the user. :raw-html:`<br />`
-**Warning:** Do not enter any value for ``user`` **Warning:** :raw-html:`<br />`
+**Warning** Do not enter any value for ``user`` **Warning:** :raw-html:`<br />`
 
 ----
 
