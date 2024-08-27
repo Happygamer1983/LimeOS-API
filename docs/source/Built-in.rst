@@ -4,56 +4,56 @@ Built-in API
 The following functions are built into LimeOS and do not require the use of ``loadlib()`` to be accessed.
 
 .. role:: raw-html(raw)
-    :format: html
+   :format: html
 
 ----
 
 .. code-block:: luau  
 
-  Lime.CreateWindow(name:string, icon:number) -> instance
+  Lime.CreateWindow(name: string, icon: number) -> instance
 
-Creates and returns a new application Window :raw-html:`<br />`
-``name: The name of your application`` :raw-html:`<br />`
-``icon: An optional icon ID for your application`` :raw-html:`<br />`
+Creates and returns a new application window. :raw-html:`<br />`
+``name``: A string representing the name of the application. :raw-html:`<br />`
+``icon``: An optional number representing the icon ID for the application. If omitted, the window will be created without an icon. :raw-html:`<br />`
 
 ----
 
 .. code-block:: luau  
 
-  Lime.CreateUI(parent:instance, name:string) -> instance
+  Lime.CreateUI(parent: instance, name: string) -> instance
 
 Creates and returns a new UI object, placing it inside the specified parent instance. :raw-html:`<br />`
-``parent: The parent instance of your ui element`` :raw-html:`<br />`
-``name: What ui element you want to create (eg. TextLable)`` :raw-html:`<br />`
+``parent``: The instance in which the UI object will be placed. :raw-html:`<br />`
+``name``: A string representing the type of UI element to create (e.g., "TextLabel"). :raw-html:`<br />`
 
 ----
 
 .. code-block:: luau  
 
-  Lime.GetService(name:string) -> table
+  Lime.GetService(name: string) -> table
 
 Returns a Roblox service by its name. :raw-html:`<br />`
-``name: The name of the Roblox Service you want to get`` :raw-html:`<br />`
+``name``: A string representing the name of the Roblox service to retrieve. :raw-html:`<br />`
 
 ----
 
 .. code-block:: luau  
 
-  Lime.Encryption(ModuleVersion:string) -> table
+  Lime.Encryption(ModuleVersion: string) -> table
 
 Returns an encryption module and its functions. :raw-html:`<br />`
-``ModuleVersion: An optional flag, which encryption module should be returned`` :raw-html:`<br />`
-``--> If "AES" is provided, it returns an AES encryption module`` :raw-html:`<br />`
-``--> If nothing is provided it returns the standart LimeOS encryption module`` :raw-html:`<br />`
+``ModuleVersion``: (Optional) A string specifying which encryption module to return. :raw-html:`<br />`
+``-->`` If "AES" is provided, it returns the AES encryption module (work in progress). :raw-html:`<br />`
+``-->`` If nothing is provided, it returns the standard LimeOS encryption module. :raw-html:`<br />`
 
 ----
 
 .. code-block:: luau
 
-  loadlib(name:string) -> table
+  loadlib(name: string) -> table
 
-Returns a LimeOS module and its functions :raw-html:`<br />`
-``name: The name of the LimeOS module you want to get`` :raw-html:`<br />`
+Loads and returns a LimeOS module by its name. :raw-html:`<br />`
+``name``: A string representing the name of the LimeOS module to load. :raw-html:`<br />`
 
 ----
 
