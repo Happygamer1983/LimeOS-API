@@ -1,7 +1,7 @@
 ============
 Built-in API
 ============
-These are functions that dont need to be loaded with ``loadlib()``.
+The following functions are built into LimeOS and do not require the use of ``loadlib()`` to be accessed.
 
 .. role:: raw-html(raw)
     :format: html
