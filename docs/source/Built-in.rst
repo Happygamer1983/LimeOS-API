@@ -7,54 +7,63 @@ These are functions that dont need to be loaded with ``loadlib()``.
 
 .. code-block:: luau  
 
-  instance Lime.CreateWindow(name:string, icon:number)
+  Lime.CreateWindow(name:string, icon:number) -> instance
 
-This function creates and returns an app, the icon is not needed for this function
-
-----
-
-.. code-block:: luau  
-
-  instance Lime.CreateUI(parent:instance, name:string) 
-
-This function creates an UI obj and places it inside a specified parent, and then returns it
+Creates and returns a new application Window
+``name: The name of your application``
+``icon: An optional icon ID for your application``
 
 ----
 
 .. code-block:: luau  
 
-  table Lime.GetService(name:string)
+  Lime.CreateUI(parent:instance, name:string) -> instance
 
-This function returns a Roblox service
+Creates and returns a new UI object, placing it inside the specified parent instance.
+``parent: The parent instance of your ui element``
+``name: What ui element you want to create (eg. TextLable)``
 
 ----
 
 .. code-block:: luau  
 
-  table Lime.Encryption(ModuleVersion:string)
+  Lime.GetService(name:string) -> table
 
-This function returns either the normal encryption module or an AES module *(WIP ATM)*, if you leave ModuleVersion blank it defaults to the normal encryption module
+Returns a Roblox service by its name.
+``name: The name of the Roblox Service you want to get``
+
+----
+
+.. code-block:: luau  
+
+  Lime.Encryption(ModuleVersion:string) -> table
+
+Returns an encryption module and its functions.
+``ModuleVersion: An optional flag, which encryption module should be returned``
+``--> If "AES" is provided, it returns an AES encryption module``
+``--> If nothing is provided it returns the standart LimeOS encryption module``
 
 ----
 
 .. code-block:: luau
 
-  table loadlib(name:string)
+  loadlib(name:string) -> table
 
-This function loads and retuns a LimeOS module
-
-----
-
-.. code-block:: luau
-
-  nil print()
-
-This function prints output to the Script Editor console
+Returns a LimeOS module and its functions
+``name: The name of the LimeOS module you want to get``
 
 ----
 
 .. code-block:: luau
 
-  nil log()
+  print() -> nil
 
-This function prints to the normal Roblox console
+Prints output to the Script Editor console.
+
+----
+
+.. code-block:: luau
+
+  log() -> nil
+
+Logs output to the Roblox console.
