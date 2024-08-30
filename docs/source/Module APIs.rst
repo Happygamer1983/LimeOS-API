@@ -59,7 +59,7 @@ Creates a new partition table and returns it. :raw-html:`<br />`
 ``name`` A string name of the new partition. :raw-html:`<br />`
 ``PartitionSize`` A number size in MB for the new partition. :raw-html:`<br />`
 ``IsOSDrive`` A bool value, of LimeOS is installed on that partition. :raw-html:`<br />`
- **Warning** Do not enter any value for ``IsOSDrive`` **Warning** :raw-html:`<br />`
+ **Warning** Do not enter any value for ``IsOSDrive`` :raw-html:`<br />`
 
 ----
 
@@ -100,7 +100,7 @@ Checks if the user has the same permissions as the provided permissions. :raw-ht
 ``path`` A string for the path. :raw-html:`<br />`
 ``user`` A string name for the user. :raw-html:`<br />`
 ``permissiontype`` A string the checked permissions. :raw-html:`<br />`
- **Warning** Do not enter any value for ``user``, only enter ``nil`` as a value **Warning** :raw-html:`<br />`
+ **Warning** Do not enter any value for ``user``, only enter ``nil`` as a value :raw-html:`<br />`
 
 
 ----
@@ -150,7 +150,7 @@ Writes new data to a file object based on a provided path. :raw-html:`<br />`
 ``data`` The new string data for the file. :raw-html:`<br />`
 ``user`` A string name for the user. :raw-html:`<br />`
 ``plaintext`` A bool value that toggels file encryption, ``true`` turns the encryption off. :raw-html:`<br />`
- **Warning** Do not enter any value for ``user``, only enter ``nil`` as a value, ``plaintext`` is not intened to be used for normal files **Warning** :raw-html:`<br />`
+ **Warning** Do not enter any value for ``user``, only enter ``nil`` as a value, ``plaintext`` is not intened to be used for normal files :raw-html:`<br />`
 
 ----
 
@@ -212,7 +212,8 @@ Creates or sets a new Attribute for a file or directory object. :raw-html:`<br /
 
    FileSystem.RemoveLastItemOfPath(path:string) -> string
 
-Returns a modified string, where the string past the last ``/`` is cut. (e.g., "C:/System/Test" -> "C:/System") :raw-html:`<br />`
+Returns a modified string, where the string past the last ``/`` is cut. :raw-html:`<br />`
+(e.g., "C:/System/Test" -> "C:/System") :raw-html:`<br />`
 ``path`` The string path you want to check. :raw-html:`<br />`
 
 ----
@@ -221,7 +222,8 @@ Returns a modified string, where the string past the last ``/`` is cut. (e.g., "
 
    FileSystem.GetFinalObjectName(path:string) -> string
 
-Returns a modified string, where the string before the last ``/`` is cut. (e.g., "C:/System/Test" -> "Test") :raw-html:`<br />`
+Returns a modified string, where the string before the last ``/`` is cut. :raw-html:`<br />`
+(e.g., "C:/System/Test" -> "Test") :raw-html:`<br />`
 ``path`` The string path you want to modify. :raw-html:`<br />`
 
 ----
@@ -230,7 +232,8 @@ Returns a modified string, where the string before the last ``/`` is cut. (e.g.,
 
    FileSystem.GetFileExtension(path:string, fileobj:table) -> string
 
-Returns the string file extension of a provided path (e.g., "C:/System/Test.txt" -> "txt") :raw-html:`<br />`
+Returns the string file extension of a provided path. :raw-html:`<br />`
+(e.g., "C:/System/Test.txt" -> "txt") :raw-html:`<br />`
 ``path`` The string path you want to modify. :raw-html:`<br />`
 
 ----
@@ -239,7 +242,8 @@ Returns the string file extension of a provided path (e.g., "C:/System/Test.txt"
 
    FileSystem.RemoveCharacterFromPathEnd(path:string, chartoremove:string) -> string
 
-Returns a modified string, where the last character is cut. (e.g., "C:/System/" -> "C:/System") :raw-html:`<br />`
+Returns a modified string, where the last character is cut. :raw-html:`<br />`
+(e.g., "C:/System/" -> "C:/System") :raw-html:`<br />`
 ``path`` The string path you want to modify. :raw-html:`<br />`
 
 ----
@@ -248,7 +252,8 @@ Returns a modified string, where the last character is cut. (e.g., "C:/System/" 
 
    FileSystem.RemoveFileNameNotAllowedCharacters(path:string) -> string
 
-Returns a modified string, where any non allowed characters are removed or replaced with underscores. (e.g., "Hello #World" -> "Hello_World") :raw-html:`<br />`
+Returns a modified string, where any non allowed characters are removed or replaced with underscores. :raw-html:`<br />`
+(e.g., "Hello #World" -> "Hello_World") :raw-html:`<br />`
 ``path`` The string path you want to modify. :raw-html:`<br />`
 
 ----
