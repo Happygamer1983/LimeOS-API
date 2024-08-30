@@ -37,8 +37,8 @@ Returns the partition name where LimeOS is installed on.
 
    FileSystem.GetPartitionByIndex(index:number) -> table
 
-Returns a partition based on an number index. :raw-html:`<br />`
-``index`` A number index of all partitions. (e.g., 2 will always get the 2nd partition) :raw-html:`<br />`
+Returns a partition based on an index number. :raw-html:`<br />`
+``index`` The index number of a partition. (e.g., 2 will always get the 2nd partition) :raw-html:`<br />`
 
 ----
 
@@ -47,7 +47,7 @@ Returns a partition based on an number index. :raw-html:`<br />`
    FileSystem.GetPartitionByName(name:string) -> table
 
 Returns a partition based on a string name. :raw-html:`<br />`
-``name`` A string name of a partition. :raw-html:`<br />`
+``name`` The name of a partition. :raw-html:`<br />`
 
 ----
 
@@ -56,9 +56,9 @@ Returns a partition based on a string name. :raw-html:`<br />`
    FileSystem.CreatePartition(name:string, PartitionSize:number, IsOSDrive:bool) -> table
 
 Creates a new partition table and returns it. :raw-html:`<br />`
-``name`` A string name of the new partition. :raw-html:`<br />`
-``PartitionSize`` A number size in MB for the new partition. :raw-html:`<br />`
-``IsOSDrive`` A bool value, of LimeOS is installed on that partition. :raw-html:`<br />`
+``name`` The name of the new partition. :raw-html:`<br />`
+``PartitionSize`` The partition size in MB for the new partition. :raw-html:`<br />`
+``IsOSDrive`` A bool value, that marks if LimeOS is installed on that partition. :raw-html:`<br />`
  **Warning** Do not enter any value for ``IsOSDrive`` :raw-html:`<br />`
 
 ----
@@ -68,7 +68,7 @@ Creates a new partition table and returns it. :raw-html:`<br />`
    FileSystem.DelPartition(partition:string) -> bool
 
 Deletes a partition based on a string name. The function will return ``true`` if the deletion was successful :raw-html:`<br />`
-``partition`` A string name for the to be deleted partition. :raw-html:`<br />`
+``partition`` The name for the to be deleted partition. :raw-html:`<br />`
 
 ----
 
@@ -77,8 +77,8 @@ Deletes a partition based on a string name. The function will return ``true`` if
    FileSystem.CheckPartitionSize(partition:string, Data:table) -> bool
 
 Retuns ``true`` when there is still space on the partition for the provided data. :raw-html:`<br />`
-``partition`` A string name for the to be checked partition. :raw-html:`<br />`
-``Data`` A data table. :raw-html:`<br />`
+``partition`` The name for the to be checked partition. :raw-html:`<br />`
+``Data`` The partition data. :raw-html:`<br />`
 
 ----
 
@@ -87,7 +87,7 @@ Retuns ``true`` when there is still space on the partition for the provided data
     FileSystem.GetUserPermissions(user:string) ->  string/table
 
 Returns the permissions of the user. :raw-html:`<br />`
-``user`` A string name for the user. :raw-html:`<br />`
+``user`` The name of a user. :raw-html:`<br />`
  **Warning** Do not enter any value for ``user`` **Warning** :raw-html:`<br />`
 
 ----
@@ -97,9 +97,9 @@ Returns the permissions of the user. :raw-html:`<br />`
    FileSystem.CheckPermissions(path:string, user:string, permissiontype:string) -> bool
 
 Checks if the user has the same permissions as the provided permissions. :raw-html:`<br />`
-``path`` A string for the path. :raw-html:`<br />`
-``user`` A string name for the user. :raw-html:`<br />`
-``permissiontype`` A string the checked permissions. :raw-html:`<br />`
+``path`` The path to a file object. :raw-html:`<br />`
+``user`` The name of a user. :raw-html:`<br />`
+``permissiontype`` The permissions that will be checked for, see :ref:`how to use permissions <PermissionsInfo>`. :raw-html:`<br />`
  **Warning** Do not enter any value for ``user``, only enter ``nil`` as a value :raw-html:`<br />`
 
 
@@ -110,7 +110,7 @@ Checks if the user has the same permissions as the provided permissions. :raw-ht
    FileSystem.CalculateObjectSize(path:string) -> number
 
 Returns the KB or MB size of a file object based on a provided path. :raw-html:`<br />`
-``path`` The string path to the file object. :raw-html:`<br />`
+``path`` The path to a file object. :raw-html:`<br />`
 
 ----
 
@@ -119,7 +119,7 @@ Returns the KB or MB size of a file object based on a provided path. :raw-html:`
    FileSystem.FileExists(path:string) -> bool
 
 Checks if a file object exists based on a provided path. :raw-html:`<br />`
-``path`` The string path to the file object. :raw-html:`<br />`
+``path`` The path to a file object. :raw-html:`<br />`
 
 ----
 
@@ -128,7 +128,7 @@ Checks if a file object exists based on a provided path. :raw-html:`<br />`
    FileSystem.GetFile(path:string) -> table
 
 Returns a file object based on a provided path. :raw-html:`<br />`
-``path`` The string path to the file object. :raw-html:`<br />`
+``path`` The path to a file object. :raw-html:`<br />`
 
 ----
 
@@ -146,9 +146,9 @@ Returns the files inside a directory object based on a provided path. :raw-html:
    FileSystem.WriteFile(path:string, data:string, user:string, plaintext:bool) -> bool
 
 Writes new data to a file object based on a provided path. :raw-html:`<br />`
-``path`` The string path to the file object. :raw-html:`<br />`
-``data`` The new string data for the file. :raw-html:`<br />`
-``user`` A string name for the user. :raw-html:`<br />`
+``path`` The path to a file object. :raw-html:`<br />`
+``data`` The new data for the file. :raw-html:`<br />`
+``user`` The name of a user. :raw-html:`<br />`
 ``plaintext`` A bool value that toggels file encryption, ``true`` turns the encryption off. :raw-html:`<br />`
  **Warning** Do not enter any value for ``user``, only enter ``nil`` as a value, ``plaintext`` is not intened to be used for normal files :raw-html:`<br />`
 
@@ -159,10 +159,10 @@ Writes new data to a file object based on a provided path. :raw-html:`<br />`
    FileSystem.CreateFile(path:string, type:string, permissions:string, Owner:string) -> table
 
 Creates and retuns a new file object, and placing it in the provided path. :raw-html:`<br />`
-``path`` The string path to the file object. :raw-html:`<br />`
-``type`` The string path to the file object. :raw-html:`<br />`
-``permissions`` The string value for the file object permissions, see :ref:`how to use permissions <PermissionsInfo>`. :raw-html:`<br />`
-``Owner`` The string value for the file object owner. :raw-html:`<br />`
+``path`` The path to a file object. :raw-html:`<br />`
+``type`` The file type for the file object. :raw-html:`<br />`
+``permissions`` The file objects permissions, see :ref:`how to use permissions <PermissionsInfo>`. :raw-html:`<br />`
+``Owner`` The name for the file object owner. :raw-html:`<br />`
  **Warning** Do not enter any value for ``Owner``, exept if you want to set the owner to another user. :raw-html:`<br />`
 
 ----
@@ -172,9 +172,9 @@ Creates and retuns a new file object, and placing it in the provided path. :raw-
    FileSystem.CreateDirectory(path:string, permissions:string, Owner:string) -> table
 
 Creates and retuns a new directory object, and placing it in the provided path. :raw-html:`<br />`
-``path`` The string path to the file object. :raw-html:`<br />`
-``permissions`` The string value for the file object permissions, see :ref:`how to use permissions <PermissionsInfo>`. :raw-html:`<br />`
-``Owner`` The string value for the file object owner. :raw-html:`<br />`
+``path`` The path to a file object. :raw-html:`<br />`
+``permissions`` The file objects permissions, see :ref:`how to use permissions <PermissionsInfo>`. :raw-html:`<br />`
+``Owner`` The name for the file object owner. :raw-html:`<br />`
  **Warning** Do not enter any value for ``Owner``, exept if you want to set the owner to another user. :raw-html:`<br />`
 
 ----
@@ -184,7 +184,7 @@ Creates and retuns a new directory object, and placing it in the provided path. 
    FileSystem.DeleteObject(path:string) -> bool
 
 Delets a file or directory object based on a provided path. :raw-html:`<br />`
-``path`` The string path to the file object. :raw-html:`<br />`
+``path`` The path to a file object. :raw-html:`<br />`
 
 ----
 
@@ -193,8 +193,8 @@ Delets a file or directory object based on a provided path. :raw-html:`<br />`
    FileSystem.HasAttribute(path:string, attribute:string) -> bool
 
 Checks if a file or directory object has a certain Attribute. :raw-html:`<br />`
-``path`` The string path to the file object. :raw-html:`<br />`
-``attribute`` The string attribute you want to check for. :raw-html:`<br />`
+``path`` The path to a file object. :raw-html:`<br />`
+``attribute`` The attribute you want to check for. :raw-html:`<br />`
 
 ----
 
@@ -203,8 +203,8 @@ Checks if a file or directory object has a certain Attribute. :raw-html:`<br />`
    FileSystem.SetAttribute(path:string, attribute:string) -> table
 
 Creates or sets a new Attribute for a file or directory object. :raw-html:`<br />`
-``path`` The string path to the file object. :raw-html:`<br />`
-``attribute`` The string attribute you want to set. :raw-html:`<br />`
+``path`` The path to a file object. :raw-html:`<br />`
+``attribute`` The attribute you want to set. :raw-html:`<br />`
 
 ----
 
@@ -214,7 +214,7 @@ Creates or sets a new Attribute for a file or directory object. :raw-html:`<br /
 
 Returns a modified string, where the string past the last ``/`` is cut. :raw-html:`<br />`
 (e.g., "C:/System/Test" -> "C:/System") :raw-html:`<br />`
-``path`` The string path you want to check. :raw-html:`<br />`
+``path`` The path you want to check. :raw-html:`<br />`
 
 ----
 
@@ -224,7 +224,7 @@ Returns a modified string, where the string past the last ``/`` is cut. :raw-htm
 
 Returns a modified string, where the string before the last ``/`` is cut. :raw-html:`<br />`
 (e.g., "C:/System/Test" -> "Test") :raw-html:`<br />`
-``path`` The string path you want to modify. :raw-html:`<br />`
+``path`` The path you want to modify. :raw-html:`<br />`
 
 ----
 
@@ -234,7 +234,7 @@ Returns a modified string, where the string before the last ``/`` is cut. :raw-h
 
 Returns the string file extension of a provided path. :raw-html:`<br />`
 (e.g., "C:/System/Test.txt" -> "txt") :raw-html:`<br />`
-``path`` The string path you want to modify. :raw-html:`<br />`
+``path`` The path you want to modify. :raw-html:`<br />`
 
 ----
 
@@ -244,7 +244,7 @@ Returns the string file extension of a provided path. :raw-html:`<br />`
 
 Returns a modified string, where the last character is cut. :raw-html:`<br />`
 (e.g., "C:/System/" -> "C:/System") :raw-html:`<br />`
-``path`` The string path you want to modify. :raw-html:`<br />`
+``path`` The path you want to modify. :raw-html:`<br />`
 
 ----
 
@@ -254,7 +254,7 @@ Returns a modified string, where the last character is cut. :raw-html:`<br />`
 
 Returns a modified string, where any non allowed characters are removed or replaced with underscores. :raw-html:`<br />`
 (e.g., "Hello #World" -> "Hello_World") :raw-html:`<br />`
-``path`` The string path you want to modify. :raw-html:`<br />`
+``path`` The path you want to modify. :raw-html:`<br />`
 
 ----
 
