@@ -161,7 +161,7 @@ Writes new data to a file object based on a provided path.
 Creates and retuns a new file object, and placing it in the provided path.
 ``path`` The string path to the file object. :raw-html:`<br />`
 ``type`` The string path to the file object. :raw-html:`<br />`
-``permissions`` The string value for the file object permissions, see :ref:`permissions <PermissionsInfo>`. :raw-html:`<br />`
+``permissions`` The string value for the file object permissions, see :ref:`how to use permissions <PermissionsInfo>`. :raw-html:`<br />`
 ``Owner`` The string value for the file object owner. :raw-html:`<br />`
 
 ----
