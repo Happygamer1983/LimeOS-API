@@ -76,7 +76,7 @@ Deletes a partition based on a string name. The function will return ``true`` if
 
    FileSystem.CheckPartitionSize(partition:string, Data:table) -> bool
 
-Retuns ``true`` when there is still space on the partition for the provided data.
+Retuns ``true`` when there is still space on the partition for the provided data. :raw-html:`<br />`
 ``partition`` A string name for the to be checked partition. :raw-html:`<br />`
 ``Data`` A data table. :raw-html:`<br />`
 
@@ -86,7 +86,7 @@ Retuns ``true`` when there is still space on the partition for the provided data
 
     FileSystem.GetUserPermissions(user:string) ->  string/table
 
-Returns the permissions of the user.
+Returns the permissions of the user. :raw-html:`<br />`
 ``user`` A string name for the user. :raw-html:`<br />`
  **Warning** Do not enter any value for ``user`` **Warning** :raw-html:`<br />`
 
@@ -96,7 +96,7 @@ Returns the permissions of the user.
 
    FileSystem.CheckPermissions(path:string, user:string, permissiontype:string) -> bool
 
-Checks if the user has the same permissions as the provided permissions.
+Checks if the user has the same permissions as the provided permissions. :raw-html:`<br />`
 ``path`` A string for the path. :raw-html:`<br />`
 ``user`` A string name for the user. :raw-html:`<br />`
 ``permissiontype`` A string the checked permissions. :raw-html:`<br />`
@@ -109,7 +109,7 @@ Checks if the user has the same permissions as the provided permissions.
 
    FileSystem.CalculateObjectSize(path:string) -> number
 
-Returns the KB or MB size of a file object based on a provided path.
+Returns the KB or MB size of a file object based on a provided path. :raw-html:`<br />`
 ``path`` The string path to the file object. :raw-html:`<br />`
 
 ----
@@ -118,7 +118,7 @@ Returns the KB or MB size of a file object based on a provided path.
 
    FileSystem.FileExists(path:string) -> bool
 
-Checks if a file object exists based on a provided path.
+Checks if a file object exists based on a provided path. :raw-html:`<br />`
 ``path`` The string path to the file object. :raw-html:`<br />`
 
 ----
@@ -127,7 +127,7 @@ Checks if a file object exists based on a provided path.
 
    FileSystem.GetFile(path:string) -> table
 
-Returns a file object based on a provided path.
+Returns a file object based on a provided path. :raw-html:`<br />`
 ``path`` The string path to the file object. :raw-html:`<br />`
 
 ----
@@ -136,7 +136,7 @@ Returns a file object based on a provided path.
 
    FileSystem.GetFiles(path:string) -> table
 
-Returns the files inside a directory object based on a provided path.
+Returns the files inside a directory object based on a provided path. :raw-html:`<br />`
 ``path`` The string path to the directory object. :raw-html:`<br />`
 
 ----
@@ -145,7 +145,7 @@ Returns the files inside a directory object based on a provided path.
 
    FileSystem.WriteFile(path:string, data:string, user:string, plaintext:bool) -> bool
 
-Writes new data to a file object based on a provided path.
+Writes new data to a file object based on a provided path. :raw-html:`<br />`
 ``path`` The string path to the file object. :raw-html:`<br />`
 ``data`` The new string data for the file. :raw-html:`<br />`
 ``user`` A string name for the user. :raw-html:`<br />`
@@ -158,11 +158,12 @@ Writes new data to a file object based on a provided path.
 
    FileSystem.CreateFile(path:string, type:string, permissions:string, Owner:string) -> table
 
-Creates and retuns a new file object, and placing it in the provided path.
+Creates and retuns a new file object, and placing it in the provided path. :raw-html:`<br />`
 ``path`` The string path to the file object. :raw-html:`<br />`
 ``type`` The string path to the file object. :raw-html:`<br />`
 ``permissions`` The string value for the file object permissions, see :ref:`how to use permissions <PermissionsInfo>`. :raw-html:`<br />`
 ``Owner`` The string value for the file object owner. :raw-html:`<br />`
+ **Warning** Do not enter any value for ``Owner``, exept if you want to set the owner to another user. :raw-html:`<br />`
 
 ----
 
@@ -170,7 +171,11 @@ Creates and retuns a new file object, and placing it in the provided path.
 
    FileSystem.CreateDirectory(path:string, permissions:string, Owner:string) -> table
 
-Creates and retuns a new directory object, and placing it in the provided path.
+Creates and retuns a new directory object, and placing it in the provided path. :raw-html:`<br />`
+``path`` The string path to the file object. :raw-html:`<br />`
+``permissions`` The string value for the file object permissions, see :ref:`how to use permissions <PermissionsInfo>`. :raw-html:`<br />`
+``Owner`` The string value for the file object owner. :raw-html:`<br />`
+ **Warning** Do not enter any value for ``Owner``, exept if you want to set the owner to another user. :raw-html:`<br />`
 
 ----
 
@@ -178,7 +183,8 @@ Creates and retuns a new directory object, and placing it in the provided path.
 
    FileSystem.DeleteObject(path:string) -> bool
 
-Delets a file or directory object based on a provided path.
+Delets a file or directory object based on a provided path. :raw-html:`<br />`
+``path`` The string path to the file object. :raw-html:`<br />`
 
 ----
 
@@ -186,7 +192,9 @@ Delets a file or directory object based on a provided path.
 
    FileSystem.HasAttribute(path:string, attribute:string) -> bool
 
-Checks if a file or directory object has a certain Attribute.
+Checks if a file or directory object has a certain Attribute. :raw-html:`<br />`
+``path`` The string path to the file object. :raw-html:`<br />`
+``attribute`` The string attribute you want to check for. :raw-html:`<br />`
 
 ----
 
@@ -194,7 +202,9 @@ Checks if a file or directory object has a certain Attribute.
 
    FileSystem.SetAttribute(path:string, attribute:string) -> table
 
-Creates or sets a new Attribute for a file or directory object.
+Creates or sets a new Attribute for a file or directory object. :raw-html:`<br />`
+``path`` The string path to the file object. :raw-html:`<br />`
+``attribute`` The string attribute you want to set. :raw-html:`<br />`
 
 ----
 
@@ -202,7 +212,8 @@ Creates or sets a new Attribute for a file or directory object.
 
    FileSystem.RemoveLastItemOfPath(path:string) -> string
 
-Returns a modified string, where the string past the last ``/`` is cut. (e.g., "C:/System/Test" -> "C:/System")
+Returns a modified string, where the string past the last ``/`` is cut. (e.g., "C:/System/Test" -> "C:/System") :raw-html:`<br />`
+``path`` The string path you want to check. :raw-html:`<br />`
 
 ----
 
@@ -210,7 +221,8 @@ Returns a modified string, where the string past the last ``/`` is cut. (e.g., "
 
    FileSystem.GetFinalObjectName(path:string) -> string
 
-Returns a modified string, where the string before the last ``/`` is cut. (e.g., "C:/System/Test" -> "Test")
+Returns a modified string, where the string before the last ``/`` is cut. (e.g., "C:/System/Test" -> "Test") :raw-html:`<br />`
+``path`` The string path you want to modify. :raw-html:`<br />`
 
 ----
 
@@ -218,7 +230,8 @@ Returns a modified string, where the string before the last ``/`` is cut. (e.g.,
 
    FileSystem.GetFileExtension(path:string, fileobj:table) -> string
 
-Returns the string file extension of a provided path (e.g., "C:/System/Test.txt" -> "txt")
+Returns the string file extension of a provided path (e.g., "C:/System/Test.txt" -> "txt") :raw-html:`<br />`
+``path`` The string path you want to modify. :raw-html:`<br />`
 
 ----
 
@@ -226,7 +239,8 @@ Returns the string file extension of a provided path (e.g., "C:/System/Test.txt"
 
    FileSystem.RemoveCharacterFromPathEnd(path:string, chartoremove:string) -> string
 
-Returns a modified string, where the last character is cut. (e.g., "C:/System/" -> "C:/System")
+Returns a modified string, where the last character is cut. (e.g., "C:/System/" -> "C:/System") :raw-html:`<br />`
+``path`` The string path you want to modify. :raw-html:`<br />`
 
 ----
 
@@ -234,7 +248,8 @@ Returns a modified string, where the last character is cut. (e.g., "C:/System/" 
 
    FileSystem.RemoveFileNameNotAllowedCharacters(path:string) -> string
 
-Returns a modified string, where any non allowed characters are removed or replaced with underscores. (e.g., "Hello #World" -> "Hello_World")
+Returns a modified string, where any non allowed characters are removed or replaced with underscores. (e.g., "Hello #World" -> "Hello_World") :raw-html:`<br />`
+``path`` The string path you want to modify. :raw-html:`<br />`
 
 ----
 
@@ -248,7 +263,7 @@ Kernel
 
    Kernel.MemAlloc(memamount:number) -> nil
 
-This function allowcates memory from system memory
+This function allowcates memory from system memory :raw-html:`<br />`
 
 ----
 
@@ -256,7 +271,7 @@ This function allowcates memory from system memory
 
    Kernel.MemDealloc(memamount:number) -> nil
 
-This function deallocates memory from system memory
+This function deallocates memory from system memory :raw-html:`<br />`
 
 ----
 
@@ -264,7 +279,7 @@ This function deallocates memory from system memory
 
    Kernel.MemUpdate(applicationdata:table) -> nil
 
-This function updates the memory used by apps
+This function updates the memory used by apps :raw-html:`<br />`
 
 ----
 
@@ -272,7 +287,7 @@ This function updates the memory used by apps
 
    Kernel.ReturnMem(returnmax:bool) -> number
 
-This function returns the used amount of memory, if ``returnmax:bool`` is set to ``true`` it returns the amount of memory the system has
+This function returns the used amount of memory, if ``returnmax:bool`` is set to ``true`` it returns the amount of memory the system has :raw-html:`<br />`
 
 ----
 
@@ -280,7 +295,7 @@ This function returns the used amount of memory, if ``returnmax:bool`` is set to
 
    Kernel.MemCalc(application:instance) -> number
 
-This function calculates the amount of memory used by an app
+This function calculates the amount of memory used by an app :raw-html:`<br />`
 
 ----
 
@@ -288,7 +303,7 @@ This function calculates the amount of memory used by an app
 
    Kernel.SystemBugCheck(errorcode:string) -> nil
 
-This function crashes the system and creates a dump file
+This function crashes the system and creates a dump file :raw-html:`<br />`
 This file can be found at: */System/Dumps/*
 
 ----
