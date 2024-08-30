@@ -10,6 +10,7 @@ To use these modules and the function in them load them ``loadlib()``.
 
 FileSystem
 ==========
+.. PermissionsInfo:
 The FileSystem module utilizes four distinct permissions: ``R = Read, W = Write, D = Delete, and A = Admin``. :raw-html:`<br />`
 Permissions should be formatted correctly, with multiple permissions separated by a hyphen (e.g., "R-W-D"). For single permissions, simply use the corresponding letter (e.g., "R" or "D"). :raw-html:`<br />`
 These permissions govern actions such as reading, writing, deleting, and creating file objects. :raw-html:`<br />`
@@ -108,6 +109,7 @@ Checks if the user has the same permissions as the provided permissions.
    FileSystem.CalculateObjectSize(path:string) -> number
 
 Returns the KB or MB size of a file object based on a provided path.
+``path`` The string path to the file object. :raw-html:`<br />`
 
 ----
 
@@ -116,6 +118,7 @@ Returns the KB or MB size of a file object based on a provided path.
    FileSystem.FileExists(path:string) -> bool
 
 Checks if a file object exists based on a provided path.
+``path`` The string path to the file object. :raw-html:`<br />`
 
 ----
 
@@ -124,6 +127,7 @@ Checks if a file object exists based on a provided path.
    FileSystem.GetFile(path:string) -> table
 
 Returns a file object based on a provided path.
+``path`` The string path to the file object. :raw-html:`<br />`
 
 ----
 
@@ -132,6 +136,7 @@ Returns a file object based on a provided path.
    FileSystem.GetFiles(path:string) -> table
 
 Returns the files inside a directory object based on a provided path.
+``path`` The string path to the directory object. :raw-html:`<br />`
 
 ----
 
@@ -140,8 +145,11 @@ Returns the files inside a directory object based on a provided path.
    FileSystem.WriteFile(path:string, data:string, user:string, plaintext:bool) -> bool
 
 Writes new data to a file object based on a provided path.
---This function writes new data to a file, set ``plaintext`` to true to disable encryption (not really supported)
---**Set** ``user:string`` **to** ``nil``
+``path`` The string path to the file object. :raw-html:`<br />`
+``data`` The new string data for the file. :raw-html:`<br />`
+``user`` A string name for the user. :raw-html:`<br />`
+``plaintext`` A bool value that toggels file encryption, ``true`` turns the encryption off. :raw-html:`<br />`
+ **Warning** Do not enter any value for ``user``, only enter ``nil`` as a value, ``plaintext`` is not intened to be used for normal files **Warning** :raw-html:`<br />`
 
 ----
 
@@ -150,6 +158,10 @@ Writes new data to a file object based on a provided path.
    FileSystem.CreateFile(path:string, type:string, permissions:string, Owner:string) -> table
 
 Creates and retuns a new file object, and placing it in the provided path.
+``path`` The string path to the file object. :raw-html:`<br />`
+``type`` The string path to the file object. :raw-html:`<br />`
+``permissions`` The string value for the file object permissions, see :ref:`permissions <PermissionsInfo>`:. :raw-html:`<br />`
+``Owner`` The string value for the file object owner. :raw-html:`<br />`
 
 ----
 
