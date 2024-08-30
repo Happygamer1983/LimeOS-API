@@ -10,7 +10,7 @@ To use these modules and the function in them load them ``loadlib()``.
 
 FileSystem
 ==========
-.. PermissionsInfo:
+.. _PermissionsInfo:
 The FileSystem module utilizes four distinct permissions: ``R = Read, W = Write, D = Delete, and A = Admin``. :raw-html:`<br />`
 Permissions should be formatted correctly, with multiple permissions separated by a hyphen (e.g., "R-W-D"). For single permissions, simply use the corresponding letter (e.g., "R" or "D"). :raw-html:`<br />`
 These permissions govern actions such as reading, writing, deleting, and creating file objects. :raw-html:`<br />`
