@@ -160,7 +160,7 @@ Writes new data to a file object based on a provided path. :raw-html:`<br />`
 
 Creates and retuns a new file object, and placing it in the provided path. :raw-html:`<br />`
 ``path`` The path to a file object. :raw-html:`<br />`
-`` ┗━>`` The file name is everything past the last ``/``, so ``/System/testfile.txt`` would have a file name of ``testfile.txt``. :raw-html:`<br />`
+``┗━>`` The file name is everything past the last ``/``, so ``/System/testfile.txt`` would have a file name of ``testfile.txt``. :raw-html:`<br />`
 ``type`` The file type for the file object. :raw-html:`<br />`
 ``permissions`` The file objects permissions, see :ref:`how to use permissions <PermissionsInfo>`. :raw-html:`<br />`
 ``Owner`` The name for the file object owner. :raw-html:`<br />`
@@ -174,7 +174,7 @@ Creates and retuns a new file object, and placing it in the provided path. :raw-
 
 Creates and retuns a new directory object, and placing it in the provided path. :raw-html:`<br />`
 ``path`` The path to a file object. :raw-html:`<br />`
-`` ┗━>`` The directory name is everything past the last ``/``, so ``/System/NewDir`` would have a directory name of ``newDir``. :raw-html:`<br />`
+``┗━>`` The directory name is everything past the last ``/``, so ``/System/NewDir`` would have a directory name of ``newDir``. :raw-html:`<br />`
 ``permissions`` The file objects permissions, see :ref:`how to use permissions <PermissionsInfo>`. :raw-html:`<br />`
 ``Owner`` The name for the file object owner. :raw-html:`<br />`
  **Warning** Do not enter any value for ``Owner``, exept if you want to set the owner to another user. :raw-html:`<br />`
