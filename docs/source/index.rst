@@ -1,13 +1,13 @@
+===========================
 Welcome to the LimeOS 3 API
 ===========================
-
-.. role:: raw-html(raw)
-    :format: html
 
    This is the LimeOS 3 API. :raw-html:`<br />`
    LimeOS 3 is a Roblox OS simulation :raw-html:`<br />`
    The API and game are still WIP. :raw-html:`<br />`
 
+.. role:: raw-html(raw)
+    :format: html
 
 Contents
 --------
