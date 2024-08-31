@@ -263,7 +263,7 @@ Returns a modified string, where any non allowed characters are removed or repla
 
 Kernel
 ==========
- **Warning** Most of the Kernel function can or will crash the system, be carefull when using them :raw-html:`<br />`
+ **Warning** Most of the Kernel functions can or will crash the system, be carefull when using them. :raw-html:`<br />`
 
 .. code-block:: luau  
 
@@ -355,7 +355,7 @@ AccountManager
 
    AccountManager.GetCurrentUser() -> string
 
-This function returns the currently logged-in user
+Returns the currently logged-in user
 
 ----
 
@@ -363,7 +363,10 @@ This function returns the currently logged-in user
 
    AccountManager.CreateAccount(username:string, pin:number, permissions:string) -> nil
 
-This function creates a new user account
+Creates a new user account :raw-html:`<br />`
+``username`` The name of the new user account. :raw-html:`<br />`
+``pin`` The PIN number for the account, can be left empty. :raw-html:`<br />`
+``permissions`` The permissions that the user will have, see :ref:`how to use permissions <PermissionsInfo>`. :raw-html:`<br />`
 
 ----
 
@@ -371,7 +374,8 @@ This function creates a new user account
 
    AccountManager.DeleteAccount(username:string) -> nil
 
-This function deletes a user account
+Deletes a user account. :raw-html:`<br />`
+``username`` The name of the user account you want to delete. :raw-html:`<br />`
 
 ----
 
@@ -379,7 +383,10 @@ This function deletes a user account
 
    AccountManager.SetAccountPIN(username:string oldpin:number, newpin:number) -> bool
 
-This function updates the pin on a user account
+Updates the PIN number on a user account. :raw-html:`<br />`
+``username`` The name of the user account you want to change the PIN for. :raw-html:`<br />`
+``oldpin`` The current PIN number of the user account. :raw-html:`<br />`
+``newpin`` The new PIN number of the user account. :raw-html:`<br />`
 
 ----
 
@@ -392,9 +399,12 @@ NetworkManager
 
 .. code-block:: luau  
 
-   NetworkManager.NetConnect() -> nil
+   NetworkManager.NetConnect(CustomIP:string) -> nil
 
-This function connects the system to the network
+Connects the system to the LimeOS Network. :raw-html:`<br />`
+``CustomIP`` The toggle value for if you want to use an custom IP. :raw-html:`<br />`
+``┗━>`` If an IP is provided, it will use that IP. :raw-html:`<br />`
+``┗━>`` If nothing is provided, it will generate you a IP if you dont already have one. :raw-html:`<br />`
 
 ----
 
@@ -402,23 +412,28 @@ This function connects the system to the network
 
    NetworkManager.NetDisconnect() -> nil
 
-This function disconnect the system to the network
+Disconnect the system from the LimeOS Network.
 
 ----
 
 .. code-block:: luau  
 
-   NetworkManager.Post(ToIP:string, Data:any) -> nil
+   NetworkManager.Post(ToIP:string, Port:string Data:any) -> nil
 
-This function sends data to a specified IP
+Sends data to an IP on a port. :raw-html:`<br />`
+``ToIP`` The IP you want to send data to. :raw-html:`<br />`
+``Port`` The Port you want to send the data too. :raw-html:`<br />`
+``Data`` The data you want to send, can be anything exept instances. :raw-html:`<br />`
 
 ----
 
 .. code-block:: luau  
 
-   NetworkManager.Receive(callback:function) -> function
+   NetworkManager.Receive(Port:string, callback:function) -> function
 
-This function calls the specified callback function when data has been received
+Calls a connected function if any data is received on a specified Port. :raw-html:`<br />`
+``Port`` The port you want to listen on for data. :raw-html:`<br />`
+``callback`` The function you want the NetworkManager to call once you receive data. :raw-html:`<br />`
 
 ----
 
@@ -426,7 +441,18 @@ This function calls the specified callback function when data has been received
 
    NetworkManager.NetStatus() -> bool
 
-This function returns the connection status of the system, true = connected, false = not connected
+Returns the connection status of the system. :raw-html:`<br />`
+``true`` The system is connected. :raw-html:`<br />`
+``false`` The system is not connected :raw-html:`<br />`
+
+----
+
+.. code-block:: luau  
+
+   NetworkManager.ToggleStaticIP() -> bool
+
+Toggels if you want a static or dynamic IP. :raw-html:`<br />`
+ **Warning** This function is still ``W.I.P``. :raw-html:`<br />`
 
 ----
 
