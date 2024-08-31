@@ -86,7 +86,7 @@ Retuns ``true`` when there is still space on the partition for the provided data
 
 Returns the permissions of the user. :raw-html:`<br />`
 ``user`` The name of a user. :raw-html:`<br />`
- **Warning** :raw-html:`<br />` Do not enter any value for ``user`` **Warning** :raw-html:`<br />` :raw-html:`<br />`
+ **Warning** :raw-html:`<br />` Do not enter any value for ``user`` :raw-html:`<br />`
 
 ----
 
@@ -630,7 +630,7 @@ Updates the desktop wallpaper.
 
 RegistryHandler
 ==========
- **Info** :raw-html:`<br />`  The registry keys use a path like system (e.g. "System/FileExtensions/txt". :raw-html:`<br />`
+ **Info** :raw-html:`<br />`  The registry keys use a path like system (e.g. "System/FileExtensions/txt"). :raw-html:`<br />`
 
 .. code-block:: luau  
 
