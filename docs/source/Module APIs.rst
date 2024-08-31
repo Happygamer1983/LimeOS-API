@@ -60,6 +60,7 @@ Creates a new partition table and returns it. :raw-html:`<br />`
 ``name`` The name of the new partition. :raw-html:`<br />`
 ``PartitionSize`` The partition size in MB for the new partition. :raw-html:`<br />`
 ``IsOSDrive`` A bool value, that marks if LimeOS is installed on that partition. :raw-html:`<br />`
+
 .. warning::
     Do not enter any value for ``IsOSDrive`` :raw-html:`<br />`
 
@@ -90,6 +91,7 @@ Retuns ``true`` when there is still space on the partition for the provided data
 
 Returns the permissions of the user. :raw-html:`<br />`
 ``user`` The name of a user. :raw-html:`<br />`
+
 .. warning::
     Do not enter any value for ``user`` :raw-html:`<br />`
 
@@ -103,6 +105,7 @@ Checks if the user has the same permissions as the provided permissions. :raw-ht
 ``path`` The path to a file object. :raw-html:`<br />`
 ``user`` The name of a user. :raw-html:`<br />`
 ``permissiontype`` The permissions that will be checked for, see :ref:`how to use permissions <PermissionsInfo>`. :raw-html:`<br />`
+
 .. warning::
     Do not enter any value for ``user``, only enter ``nil`` as a value :raw-html:`<br />`
 
@@ -154,6 +157,7 @@ Writes new data to a file object based on a provided path. :raw-html:`<br />`
 ``data`` The new data for the file. :raw-html:`<br />`
 ``user`` The name of a user. :raw-html:`<br />`
 ``plaintext`` A bool value that toggels file encryption, ``true`` turns the encryption off. :raw-html:`<br />`
+
 .. warning::
     Do not enter any value for ``user``, only enter ``nil`` as a value, ``plaintext`` is not intened to be used for normal files :raw-html:`<br />`
 
@@ -169,6 +173,7 @@ Creates and retuns a new file object, and placing it in the provided path. :raw-
 ``type`` The file type for the file object. :raw-html:`<br />`
 ``permissions`` The file objects permissions, see :ref:`how to use permissions <PermissionsInfo>`. :raw-html:`<br />`
 ``Owner`` The name for the file object owner. :raw-html:`<br />`
+
 .. warning::
     Do not enter any value for ``Owner``, exept if you want to set the owner to another user. :raw-html:`<br />`
 
@@ -183,6 +188,7 @@ Creates and retuns a new directory object, and placing it in the provided path. 
 ``┗━>`` The directory name is everything past the last ``/``, so ``/System/NewDir`` would have a directory name of ``newDir``. :raw-html:`<br />`
 ``permissions`` The directory objects permissions, see :ref:`how to use permissions <PermissionsInfo>`. :raw-html:`<br />`
 ``Owner`` The name for the directory object owner. :raw-html:`<br />`
+
 .. warning::
     Do not enter any value for ``Owner``, exept if you want to set the owner to another user. :raw-html:`<br />`
 
@@ -281,6 +287,7 @@ Kernel
 
 Allowcates a specified amount of memory :raw-html:`<br />`
 ``memamount`` The amount of memory you want to allowcate in bytes. :raw-html:`<br />`
+
 .. warning::
     Only enter a number for ``memamount`` :raw-html:`<br />`
 
@@ -292,6 +299,7 @@ Allowcates a specified amount of memory :raw-html:`<br />`
 
 Deallocates a specified amount of memory :raw-html:`<br />`
 ``memamount`` The amount of memory you want to deallocate in bytes. :raw-html:`<br />`
+
 .. warning::
     Only enter a number for ``memamount`` :raw-html:`<br />`
 
@@ -464,6 +472,7 @@ Returns the connection status of the system. :raw-html:`<br />`
    NetworkManager.ToggleStaticIP() -> bool
 
 Toggels if you want a static or dynamic IP. :raw-html:`<br />`
+
 .. warning::
     This function is still ``W.I.P``. :raw-html:`<br />`
 
@@ -634,6 +643,7 @@ Starts the login screem environment.
    DesktopManager.UpdateWallpaper() -> nil
 
 Updates the desktop wallpaper.
+
 .. warning::
     This function is still ``W.I.P``. :raw-html:`<br />`
 
