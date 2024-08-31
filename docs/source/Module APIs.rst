@@ -263,12 +263,15 @@ Returns a modified string, where any non allowed characters are removed or repla
 
 Kernel
 ==========
+ **Warning** Most of the Kernel function can or will crash the system, be carefull when using them :raw-html:`<br />`
 
 .. code-block:: luau  
 
    Kernel.MemAlloc(memamount:number) -> nil
 
-This function allowcates memory from system memory :raw-html:`<br />`
+Allowcates a specified amount of memory :raw-html:`<br />`
+``memamount`` The amount of memory you want to allowcate in bytes. :raw-html:`<br />`
+ **Warning** Only enter a number for ``memamount`` :raw-html:`<br />`
 
 ----
 
@@ -276,7 +279,9 @@ This function allowcates memory from system memory :raw-html:`<br />`
 
    Kernel.MemDealloc(memamount:number) -> nil
 
-This function deallocates memory from system memory :raw-html:`<br />`
+Deallocates a specified amount of memory :raw-html:`<br />`
+``memamount`` The amount of memory you want to deallocate in bytes. :raw-html:`<br />`
+ **Warning** Only enter a number for ``memamount`` :raw-html:`<br />`
 
 ----
 
@@ -284,7 +289,8 @@ This function deallocates memory from system memory :raw-html:`<br />`
 
    Kernel.MemUpdate(applicationdata:table) -> nil
 
-This function updates the memory used by apps :raw-html:`<br />`
+Recalculates and updates the required amount of memory for a provided application :raw-html:`<br />`
+``applicationdata`` The info table for an application. :raw-html:`<br />`
 
 ----
 
@@ -292,7 +298,10 @@ This function updates the memory used by apps :raw-html:`<br />`
 
    Kernel.ReturnMem(returnmax:bool) -> number
 
-This function returns the used amount of memory, if ``returnmax:bool`` is set to ``true`` it returns the amount of memory the system has :raw-html:`<br />`
+Returns the amount of system memory or the used amount of memoryThe amount of memory you want to deallocate in bytes :raw-html:`<br />`
+``returnmax`` The toggle value for what it returns. :raw-html:`<br />`
+``┗━>`` If ``true`` is provided, it returns the amount of memory the system has. :raw-html:`<br />`
+``┗━>`` If nothing or ``false`` is provided, it returns the amount of used system memory. :raw-html:`<br />`
 
 ----
 
@@ -300,7 +309,8 @@ This function returns the used amount of memory, if ``returnmax:bool`` is set to
 
    Kernel.MemCalc(application:instance) -> number
 
-This function calculates the amount of memory used by an app :raw-html:`<br />`
+Calculates the amount of memory required for a specified app :raw-html:`<br />`
+``application`` The application you want to calculate the memory for :raw-html:`<br />`
 
 ----
 
@@ -308,24 +318,28 @@ This function calculates the amount of memory used by an app :raw-html:`<br />`
 
    Kernel.SystemBugCheck(errorcode:string) -> nil
 
-This function crashes the system and creates a dump file :raw-html:`<br />`
-This file can be found at: */System/Dumps/*
+Crashes the system and creates a dump file :raw-html:`<br />`
+``errorcode`` The error code you see in the crash screen :raw-html:`<br />`
+Dump files can be found in ``/System/Dumps/``
 
 ----
 
 .. code-block:: luau  
 
-   Kernel.SystemStart(systemrestart:bool) -> nil
+   Kernel.SystemStart() -> nil
 
-This function starts the system and loads everything requered
+Starts the system and loads everything required
 
 ----
 
 .. code-block:: luau  
 
- Kernel.SystemShutdown() -> nil 
+ Kernel.SystemShutdown(systemrestart:bool) -> nil 
 
-This function shuts down the system or restarts it if ``systemrestart:bool`` is set to ``true``
+Shuts down or Reboots the system, also saves the file system. :raw-html:`<br />`
+``systemrestart`` The toggle value for if it restarts. :raw-html:`<br />`
+``┗━>`` If ``true`` is provided, it will reboot the system. :raw-html:`<br />`
+``┗━>`` If nothing or ``false`` is provided, it shuts down and kicks the player. :raw-html:`<br />`
 
 ----
 
