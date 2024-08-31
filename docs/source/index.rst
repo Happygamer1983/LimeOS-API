@@ -5,6 +5,9 @@ Welcome to the LimeOS 3 API
 
 Contents
 --------
+:doc:`Built-in`
+:doc:`Module APIs`
+:doc:`Examples`
 
 .. toctree::
    :maxdepth: 2
