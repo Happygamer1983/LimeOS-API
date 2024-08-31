@@ -173,10 +173,10 @@ Creates and retuns a new file object, and placing it in the provided path. :raw-
    FileSystem.CreateDirectory(path:string, permissions:string, Owner:string) -> table
 
 Creates and retuns a new directory object, and placing it in the provided path. :raw-html:`<br />`
-``path`` The path to a file object. :raw-html:`<br />`
+``path`` The path to a directory object. :raw-html:`<br />`
 ``┗━>`` The directory name is everything past the last ``/``, so ``/System/NewDir`` would have a directory name of ``newDir``. :raw-html:`<br />`
-``permissions`` The file objects permissions, see :ref:`how to use permissions <PermissionsInfo>`. :raw-html:`<br />`
-``Owner`` The name for the file object owner. :raw-html:`<br />`
+``permissions`` The directory objects permissions, see :ref:`how to use permissions <PermissionsInfo>`. :raw-html:`<br />`
+``Owner`` The name for the directory object owner. :raw-html:`<br />`
  **Warning** Do not enter any value for ``Owner``, exept if you want to set the owner to another user. :raw-html:`<br />`
 
 ----
@@ -632,12 +632,16 @@ Updates the desktop wallpaper.
 
 RegistryHandler
 ==========
+ **Info** The registry keys use a path like system (e.g. "System/FileExtensions/txt". :raw-html:`<br />`
 
 .. code-block:: luau  
 
    RegistryHandler.CreateKey(key:string, data:string) -> bool
 
-Creates a new registry key
+Creates a new registry key. :raw-html:`<br />`
+``key`` The registry key path. :raw-html:`<br />`
+``┗━>`` The key name is everything past the last ``/``, so ``/System/NewRegKey`` would have a key name of ``NewRegKey``. :raw-html:`<br />`
+``data`` The data for the registry key. :raw-html:`<br />`
 
 ----
 
@@ -645,7 +649,8 @@ Creates a new registry key
 
    RegistryHandler.DeleteKey(key:string) -> bool
 
-Deletes a registry key
+Deletes a registry key. :raw-html:`<br />`
+``key`` The registry key path. :raw-html:`<br />`
 
 ----
 
@@ -653,7 +658,9 @@ Deletes a registry key
 
    RegistryHandler.SetKey(key:string, data:string) -> nil
 
-Updates the data of a registry key to a new value
+Updates the data of a registry key to a new value. :raw-html:`<br />`
+``key`` The registry key path. :raw-html:`<br />`
+``data`` The new registry key data. :raw-html:`<br />`
 
 ----
 
@@ -661,7 +668,8 @@ Updates the data of a registry key to a new value
 
    RegistryHandler.GetKey(key:string) -> table
 
-Returns a registry key
+Returns a registry key. :raw-html:`<br />`
+``key`` The registry key path. :raw-html:`<br />`
 
 ----
 
@@ -669,7 +677,7 @@ Returns a registry key
 
    RegistryHandler.SaveRegistry() -> nil
 
-This function saves the registry
+Saves the registry to a file.
 
 ----
 
@@ -677,7 +685,7 @@ This function saves the registry
 
    RegistryHandler.LoadRegistry() -> nil
 
-This function loads the registry
+Loads the registry from a file.
 
 ----
 
@@ -685,7 +693,7 @@ This function loads the registry
 
    RegistryHandler.InitRegistry() -> nil
 
-This function sets up the registry
+Sets up the registry.
 
 ----
 
