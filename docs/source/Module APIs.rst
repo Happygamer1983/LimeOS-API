@@ -630,7 +630,7 @@ Updates the desktop wallpaper.
 
 RegistryHandler
 ==========
- **Info** The registry keys use a path like system (e.g. "System/FileExtensions/txt". :raw-html:`<br />`
+ **Info** :raw-html:`<br />`  The registry keys use a path like system (e.g. "System/FileExtensions/txt". :raw-html:`<br />`
 
 .. code-block:: luau  
 
