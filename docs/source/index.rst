@@ -4,7 +4,6 @@ Welcome to the LimeOS 3 API
    This project is under active development.
 
 .. role:: raw-html(raw)
-    :format: html.. role:: raw-html(raw)
     :format: html
 
 Contents
