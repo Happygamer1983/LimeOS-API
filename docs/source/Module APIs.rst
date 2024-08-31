@@ -489,7 +489,7 @@ Converts the gives value from one format to another. :raw-html:`<br />`
 
  **Warning** If it cant find the ``From`` or ``To`` values it will return ``-1`` :raw-html:`<br />`
 
-These are all avalible formats: :raw-html:`<br />`
+All avalible formats: :raw-html:`<br />`
 ``"second"``, :raw-html:`<br />`
 ``"minute"``, :raw-html:`<br />`
 ``"hour"``, :raw-html:`<br />`
@@ -508,7 +508,7 @@ Returns a formatted version of the current time/date. :raw-html:`<br />`
 ``FormatString`` The string that the formatter uses, see `os.date <https://create.roblox.com/docs/reference/engine/libraries/os#date>`_. :raw-html:`<br />`
 ``┗━>`` If nothing is provided, it defaults to this format ``Hour:Minute`` (24 Hour time). :raw-html:`<br />`
 
-These are the diffrent formats: :raw-html:`<br />`
+Here are some formats, you can see more at `os.date <https://create.roblox.com/docs/reference/engine/libraries/os#date>`_: :raw-html:`<br />`
 ``"%Y" = Year``, :raw-html:`<br />`
 ``"%m" = Month``, :raw-html:`<br />`
 ``"%d" = Day``, :raw-html:`<br />`
@@ -533,7 +533,7 @@ ApplicationManager
 
    ApplicationManager.GetProcesses() -> nil
 
-This function returns all open processes
+Returns all open processes
 
 ----
 
@@ -541,7 +541,8 @@ This function returns all open processes
 
    ApplicationManager.ExecuteLEF(lefdata:string) -> nil
 
-This function executes LEF files
+Executes LEF files
+``lefdata`` The LEF file data. :raw-html:`<br />`
 
 ----
 
@@ -549,7 +550,10 @@ This function executes LEF files
 
    ApplicationManager.UpdateProcess(processid:string, toupdate:string, data:string) -> nil
 
-This function updates a specified property of an process
+Updates a property of a process to a new value :raw-html:`<br />`
+``processid`` The process ID of the process that you want to update. :raw-html:`<br />`
+``toupdate`` The property you want to update. :raw-html:`<br />`
+``data`` The new value for the property. :raw-html:`<br />`
 
 ----
 
@@ -558,6 +562,8 @@ This function updates a specified property of an process
    ApplicationManager.StartProcess(processname:string, processdata:table) -> instance
 
 This function starts a new process and returns the app obj for it
+``processname`` The name for your new process, use the :ref:`Built-in API <Built-in:explicit targets>` when you are creating new process. :raw-html:`<br />`
+``processdata`` The process ID of the process that you want to update. :raw-html:`<br />`
 
 ----
 
@@ -566,6 +572,7 @@ This function starts a new process and returns the app obj for it
    ApplicationManager.ExitProcess(processid:string) -> nil
 
 This function closes a process
+``processid`` The process ID of the process that you want to close. :raw-html:`<br />`
 
 ----
 
