@@ -160,6 +160,7 @@ Writes new data to a file object based on a provided path. :raw-html:`<br />`
 
 Creates and retuns a new file object, and placing it in the provided path. :raw-html:`<br />`
 ``path`` The path to a file object. :raw-html:`<br />`
+`` ┗━>`` The file name is everything past the last ``/``, so ``/System/testfile.txt`` would have a file name of ``testfile.txt``. :raw-html:`<br />`
 ``type`` The file type for the file object. :raw-html:`<br />`
 ``permissions`` The file objects permissions, see :ref:`how to use permissions <PermissionsInfo>`. :raw-html:`<br />`
 ``Owner`` The name for the file object owner. :raw-html:`<br />`
@@ -173,6 +174,7 @@ Creates and retuns a new file object, and placing it in the provided path. :raw-
 
 Creates and retuns a new directory object, and placing it in the provided path. :raw-html:`<br />`
 ``path`` The path to a file object. :raw-html:`<br />`
+`` ┗━>`` The directory name is everything past the last ``/``, so ``/System/NewDir`` would have a directory name of ``newDir``. :raw-html:`<br />`
 ``permissions`` The file objects permissions, see :ref:`how to use permissions <PermissionsInfo>`. :raw-html:`<br />`
 ``Owner`` The name for the file object owner. :raw-html:`<br />`
  **Warning** Do not enter any value for ``Owner``, exept if you want to set the owner to another user. :raw-html:`<br />`
@@ -561,8 +563,8 @@ Updates a property of a process to a new value :raw-html:`<br />`
 
    ApplicationManager.StartProcess(processname:string, processdata:table) -> instance
 
-This function starts a new process and returns the app obj for it
-``processname`` The name for your new process, use the :ref:`Built-in API <Built-in:explicit targets>` when you are creating new process. :raw-html:`<br />`
+Starts a new process and returns the newly created app
+``processname`` The name for your new process, use the :doc:`Built-in` API when you are creating new process. :raw-html:`<br />`
 ``processdata`` The process ID of the process that you want to update. :raw-html:`<br />`
 
 ----
@@ -571,7 +573,7 @@ This function starts a new process and returns the app obj for it
 
    ApplicationManager.ExitProcess(processid:string) -> nil
 
-This function closes a process
+Closes a process
 ``processid`` The process ID of the process that you want to close. :raw-html:`<br />`
 
 ----
@@ -580,7 +582,7 @@ This function closes a process
 
    ApplicationManager.CloseAllProcesses() -> nil
 
-This function closes all open processes
+Closes all processes.
 
 ----
 
@@ -595,7 +597,7 @@ DesktopManager
 
    DesktopManager.LogOut() -> nil
 
-This function logs the currently logged-in user out
+Logs the currently logged-in user out and returns him to the login screen.
 
 ----
 
@@ -603,7 +605,7 @@ This function logs the currently logged-in user out
 
    DesktopManager.InitDesktop() -> nil
 
-This function starts the desktop
+Starts the desktop environment.
 
 ----
 
@@ -611,7 +613,7 @@ This function starts the desktop
 
    DesktopManager.LoginSetup() -> nil
 
-This function starts the login screen
+Starts the login screem environment.
 
 ----
 
@@ -619,7 +621,8 @@ This function starts the login screen
 
    DesktopManager.UpdateWallpaper() -> nil
 
-This function updates the desktop wallpaper
+Updates the desktop wallpaper.
+ **Warning** This function is still ``W.I.P``. :raw-html:`<br />`
 
 ----
 
@@ -634,7 +637,7 @@ RegistryHandler
 
    RegistryHandler.CreateKey(key:string, data:string) -> bool
 
-This function creates a new registry key
+Creates a new registry key
 
 ----
 
@@ -642,7 +645,7 @@ This function creates a new registry key
 
    RegistryHandler.DeleteKey(key:string) -> bool
 
-This function deletes a registry key
+Deletes a registry key
 
 ----
 
@@ -650,7 +653,7 @@ This function deletes a registry key
 
    RegistryHandler.SetKey(key:string, data:string) -> nil
 
-This function updates the data of a registry key
+Updates the data of a registry key to a new value
 
 ----
 
@@ -658,7 +661,7 @@ This function updates the data of a registry key
 
    RegistryHandler.GetKey(key:string) -> table
 
-This function returns a registry key
+Returns a registry key
 
 ----
 
