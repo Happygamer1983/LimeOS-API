@@ -402,7 +402,7 @@ NetworkManager
    NetworkManager.NetConnect(CustomIP:string) -> nil
 
 Connects the system to the LimeOS Network. :raw-html:`<br />`
-``CustomIP`` The toggle value for if you want to use an custom IP. :raw-html:`<br />`
+``CustomIP`` A value for an custom IP. :raw-html:`<br />`
 ``┗━>`` If an IP is provided, it will use that IP. :raw-html:`<br />`
 ``┗━>`` If nothing is provided, it will generate you a IP if you dont already have one. :raw-html:`<br />`
 
@@ -443,7 +443,7 @@ Calls a connected function if any data is received on a specified Port. :raw-htm
 
 Returns the connection status of the system. :raw-html:`<br />`
 ``true`` The system is connected. :raw-html:`<br />`
-``false`` The system is not connected :raw-html:`<br />`
+``false`` The system is not connected. :raw-html:`<br />`
 
 ----
 
@@ -466,7 +466,9 @@ NotificationManager
 
    NotificationManager.SendNotification(title:string, body:string) -> nil
 
-This function sends a side notification
+Sends a side notification with a Title and body
+``title`` The title of the notification. :raw-html:`<br />`
+``body`` The body of the notification. :raw-html:`<br />`
 
 ----
 
@@ -480,7 +482,13 @@ ClockManager
 
    ClockManager.ConvertTime(Value:number, From:string, To:string) -> number
 
-This function converts the gives value from one format to another, eg. Seconds to Minutes, the function will return ``-1`` if the ``From`` or ``To`` value couldnt be found :raw-html:`<br />`
+Converts the gives value from one format to another. :raw-html:`<br />`
+``Value`` The value you want to convert. :raw-html:`<br />`
+``From`` The current format the value is now. :raw-html:`<br />`
+``To`` The format to which you want to convert. :raw-html:`<br />`
+
+ **Warning** If it cant find the ``From`` or ``To`` values it will return ``-1`` :raw-html:`<br />`
+
 These are all avalible formats: :raw-html:`<br />`
 ``"second"``, :raw-html:`<br />`
 ``"minute"``, :raw-html:`<br />`
@@ -496,7 +504,10 @@ These are all avalible formats: :raw-html:`<br />`
 
    ClockManager.CurrentTime(FormatString:string) -> string
 
-This function returns a formatted version of the current time/date, without any ``FormatString`` provided it returns ``Hour:Minute`` in 24 Hour time :raw-html:`<br />`
+Returns a formatted version of the current time/date. :raw-html:`<br />`
+``FormatString`` The string that the formatter uses, see `os.date <https://create.roblox.com/docs/reference/engine/libraries/os#date>`_. :raw-html:`<br />`
+``┗━>`` If nothing is provided, it defaults to this format ``Hour:Minute`` (24 Hour time). :raw-html:`<br />`
+
 These are the diffrent formats: :raw-html:`<br />`
 ``"%Y" = Year``, :raw-html:`<br />`
 ``"%m" = Month``, :raw-html:`<br />`
