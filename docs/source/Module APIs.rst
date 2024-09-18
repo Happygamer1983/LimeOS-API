@@ -488,9 +488,55 @@ NotificationManager
 
    NotificationManager.SendNotification(title:string, body:string) -> nil
 
-Sends a side notification with a Title and body
+Sends a side notification with a Title and body :raw-html:`<br />`
 ``title`` The title of the notification. :raw-html:`<br />`
 ``body`` The body of the notification. :raw-html:`<br />`
+
+----
+
+
+
+
+ExtraUIElements
+==========
+
+.. code-block:: luau  
+
+   ExtraUIElements.OpenSaveFileMenu(InputData:table) -> table
+
+Opens a save file dialog and returns the saved file. :raw-html:`<br />`
+
+.. note::
+    The ``InputData`` table has to have these values inside with these exact names! :raw-html:`<br />`
+
+``StartPath`` The path where the save dialog should open in. :raw-html:`<br />`
+``AllowedFileTypes`` The file extestions that are allowed to be saved. (e.g. ``{".txt", ".txt2"}``) :raw-html:`<br />`
+``Data`` The data to be saved in the file. :raw-html:`<br />`
+
+----
+
+.. code-block:: luau  
+
+   ExtraUIElements.OpenOpenFileMenu(InputData:table) -> table
+
+Opens a open file dialog and returns the opened file. :raw-html:`<br />`
+
+.. note::
+    The ``InputData`` table has to have these values inside with these exact names! :raw-html:`<br />`
+
+``StartPath`` The path where the open dialog should open in. :raw-html:`<br />`
+``ExtraText`` Some info text displayed in the dialog. :raw-html:`<br />`
+
+----
+
+.. code-block:: luau  
+
+   ExtraUIElements.CreateDropdownMenu(OptionsFrame:instance, Options:table, callback:function) -> string
+
+Creates a dropdown menu and calls a callback function once a option has been selected. :raw-html:`<br />`
+``OptionsFrame`` The UI object under which the dropdown menu apears. :raw-html:`<br />`
+``Options`` The options the menu should have. (e.g. ``{"Option 1", "Option 2"}``) :raw-html:`<br />`
+``callback`` The function that gets called once a option has been picked, this also returns the option picked. :raw-html:`<br />`
 
 ----
 
