@@ -6,8 +6,8 @@ project = 'LimeOS API'
 copyright = '2024 Happygamer1983'
 author = 'Happygamer1983'
 
-release = '0.1'
-version = '0.1.0'
+release = '3'
+version = '3.0.0'
 
 # -- General configuration
 
