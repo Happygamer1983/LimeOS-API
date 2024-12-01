@@ -283,7 +283,7 @@ Kernel
 
    Kernel.MemAlloc(memamount:number) -> nil
 
-Allowcates a specified amount of memory :raw-html:`<br />`
+Allowcates a specified amount of memory. :raw-html:`<br />`
 ``memamount`` The amount of memory you want to allowcate in bytes. :raw-html:`<br />`
 
 .. warning::
@@ -295,7 +295,7 @@ Allowcates a specified amount of memory :raw-html:`<br />`
 
    Kernel.MemDealloc(memamount:number) -> nil
 
-Deallocates a specified amount of memory :raw-html:`<br />`
+Deallocates a specified amount of memory. :raw-html:`<br />`
 ``memamount`` The amount of memory you want to deallocate in bytes. :raw-html:`<br />`
 
 .. warning::
@@ -307,7 +307,7 @@ Deallocates a specified amount of memory :raw-html:`<br />`
 
    Kernel.MemUpdate(applicationdata:table) -> nil
 
-Recalculates and updates the required amount of memory for a provided application :raw-html:`<br />`
+Recalculates and updates the required amount of memory for a provided application. :raw-html:`<br />`
 ``applicationdata`` The info table for an application. :raw-html:`<br />`
 
 ----
@@ -316,7 +316,7 @@ Recalculates and updates the required amount of memory for a provided applicatio
 
    Kernel.ReturnMem(returnmax:bool) -> number
 
-Returns the amount of system memory or the used amount of memoryThe amount of memory you want to deallocate in bytes :raw-html:`<br />`
+Returns the amount of system memory or the used amount of memory. :raw-html:`<br />`
 ``returnmax`` The toggle value for what it returns. :raw-html:`<br />`
 ``┗━>`` If ``true`` is provided, it returns the amount of memory the system has. :raw-html:`<br />`
 ``┗━>`` If nothing or ``false`` is provided, it returns the amount of used system memory. :raw-html:`<br />`
@@ -327,7 +327,7 @@ Returns the amount of system memory or the used amount of memoryThe amount of me
 
    Kernel.MemCalc(application:instance) -> number
 
-Calculates the amount of memory required for a specified app :raw-html:`<br />`
+Calculates the amount of memory required for a specified app. :raw-html:`<br />`
 ``application`` The application you want to calculate the memory for :raw-html:`<br />`
 
 ----
@@ -336,7 +336,7 @@ Calculates the amount of memory required for a specified app :raw-html:`<br />`
 
    Kernel.KernelPanic(errorcode:string) -> nil
 
-Crashes the system and creates a dump file :raw-html:`<br />`
+Crashes the system and creates a dump file. :raw-html:`<br />`
 ``errorcode`` The error code you see in the crash screen :raw-html:`<br />`
 Dump files can be found in ``/System/Dumps/``
 
@@ -346,7 +346,7 @@ Dump files can be found in ``/System/Dumps/``
 
    Kernel.SystemStart() -> nil
 
-Starts the system and loads everything required
+Starts the system and loads everything required.
 
 ----
 
