@@ -190,6 +190,7 @@ Delets a file or directory object based on a provided path. :raw-html:`<br />`
 ``path`` The path to a file object. :raw-html:`<br />`
 
 ----
+
 .. code-block:: luau  
 
    FileSystem.MoveObject(path:string, newpath:string) -> bool
@@ -469,7 +470,6 @@ Returns the connection status of the system. :raw-html:`<br />`
    NetworkManager.GetIP() -> bool
 
 Returns the IP the system is connected with. :raw-html:`<br />`
-
 
 ----
 
