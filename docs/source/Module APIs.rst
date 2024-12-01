@@ -85,17 +85,6 @@ Retuns ``true`` when there is still space on the partition for the provided data
 
 ----
 
-.. code-block:: luau  
-
-    FileSystem.GetUserPermissions(user:string) ->  string/table
-
-Returns the permissions of the user. :raw-html:`<br />`
-``user`` The name of a user. :raw-html:`<br />`
-
-.. warning::
-    Do not enter any value for ``user`` :raw-html:`<br />`
-
-----
 
 .. code-block:: luau  
 
@@ -108,7 +97,6 @@ Checks if the user has the same permissions as the provided permissions. :raw-ht
 
 .. warning::
     Do not enter any value for ``user``, only enter ``nil`` as a value :raw-html:`<br />`
-
 
 ----
 
@@ -200,6 +188,15 @@ Creates and retuns a new directory object, and placing it in the provided path. 
 
 Delets a file or directory object based on a provided path. :raw-html:`<br />`
 ``path`` The path to a file object. :raw-html:`<br />`
+
+----
+.. code-block:: luau  
+
+   FileSystem.MoveObject(path:string, newpath:string) -> bool
+
+Moves a file or directory object based on a provided path. :raw-html:`<br />`
+``path`` The path to a file object. :raw-html:`<br />`
+``newpath`` The path to where the file object gets moved to. :raw-html:`<br />`
 
 ----
 
@@ -336,7 +333,7 @@ Calculates the amount of memory required for a specified app :raw-html:`<br />`
 
 .. code-block:: luau  
 
-   Kernel.SystemBugCheck(errorcode:string) -> nil
+   Kernel.KernelPanic(errorcode:string) -> nil
 
 Crashes the system and creates a dump file :raw-html:`<br />`
 ``errorcode`` The error code you see in the crash screen :raw-html:`<br />`
@@ -464,6 +461,15 @@ Calls a connected function if any data is received on a specified Port. :raw-htm
 Returns the connection status of the system. :raw-html:`<br />`
 ``true`` The system is connected. :raw-html:`<br />`
 ``false`` The system is not connected. :raw-html:`<br />`
+
+----
+
+.. code-block:: luau  
+
+   NetworkManager.GetIP() -> bool
+
+Returns the IP the system is connected with. :raw-html:`<br />`
+
 
 ----
 
