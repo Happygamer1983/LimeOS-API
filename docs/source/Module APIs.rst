@@ -500,6 +500,24 @@ Sends a side notification with a Title and body :raw-html:`<br />`
 
 ----
 
+.. code-block:: luau  
+
+   NotificationManager.PopUp(Title:string, Prompt:string, AnswerType:number, MsgType:number, callback:function) -> nil
+
+Creates a popup with diffrent options :raw-html:`<br />`
+``title`` The title of the popup, located in the topbar of the popup. :raw-html:`<br />`
+``body`` The body of the popup. :raw-html:`<br />`
+``AnswerType`` The answer options of the popup. :raw-html:`<br />`
+``┗━>`` ``1`` is a Yes/No answer option. :raw-html:`<br />`
+``┗━>`` ``2`` is a OK answer option. :raw-html:`<br />`
+``MsgType`` What type of popup. :raw-html:`<br />`
+``┗━>`` ``1`` is a Info popup. :raw-html:`<br />`
+``┗━>`` ``2`` is a Warning popup. :raw-html:`<br />`
+``┗━>`` ``3`` is an Error popup, the popup text is also the color red. :raw-html:`<br />`
+``callback`` A function that gets called if a Yes has been clicked on a Yes/No popup. :raw-html:`<br />`
+
+----
+
 
 
 
