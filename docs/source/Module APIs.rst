@@ -274,6 +274,10 @@ Returns a modified string, where any non allowed characters are removed or repla
 
 
 
+
+
+
+
 Kernel
 ==========
 .. warning::
@@ -366,6 +370,8 @@ Shuts down or Reboots the system, also saves the file system. :raw-html:`<br />`
 
 
 
+
+
 AccountManager
 ==========
 
@@ -407,6 +413,9 @@ Updates the PIN number on a user account. :raw-html:`<br />`
 ``newpin`` The new PIN number of the user account. :raw-html:`<br />`
 
 ----
+
+
+
 
 
 
@@ -487,6 +496,10 @@ Toggels if you want a static or dynamic IP. :raw-html:`<br />`
 
 
 
+
+
+
+
 NotificationManager
 ==========
 
@@ -517,6 +530,10 @@ Creates a popup with diffrent options :raw-html:`<br />`
 ``callback`` A function that gets called if a Yes has been clicked on a Yes/No popup. :raw-html:`<br />`
 
 ----
+
+
+
+
 
 
 
@@ -567,6 +584,10 @@ Creates a dropdown menu and calls a callback function once a option has been sel
 
 
 
+
+
+
+
 ClockManager
 ==========
 
@@ -612,6 +633,7 @@ Here are some formats, you can see more at `os.date <https://create.roblox.com/d
 ``"%p" = AM/PM``, :raw-html:`<br />`
 
 ----
+
 
 
 
@@ -681,6 +703,9 @@ Closes all processes.
 
 
 
+
+
+
 DesktopManager
 ==========
 
@@ -718,6 +743,9 @@ Updates the desktop wallpaper.
     This function is still ``W.I.P``. :raw-html:`<br />`
 
 ----
+
+
+
 
 
 
@@ -796,12 +824,155 @@ Sets up the registry.
 
 
 
+
+
+SystemLogs
+==========
+
+.. code-block:: luau  
+
+   SystemLogs.Log(Info:string) -> string
+
+Logs and action with a timestamp. :raw-html:`<br />`
+``Info`` The info that you want to log. :raw-html:`<br />`
+
+----
+
+.. code-block:: luau  
+
+   SystemLogs.GetLogs() -> table
+
+Returns a copy of the log table.
+
+----
+
+.. code-block:: luau  
+
+   SystemLogs.LogDump() -> table
+
+Creates a dump file of all logs, can be found at ``/root/dmp``.
+
+----
+
+
+
+
+
+
+
+StringFiltering
+==========
+
+.. code-block:: luau  
+
+   StringFiltering.FilterString() -> string
+
+Uses Robloxes string filter for any inappropriate words.
+
+----
+
+
+
+
+
+
+
+DRMManager
+==========
+
+.. code-block:: luau  
+
+   DRMManager.OwnsAsset(assetID:number) -> bool
+
+Checks if the player owns an asset. :raw-html:`<br />`
+``assetID`` The ID to the asset. :raw-html:`<br />`
+
+----
+
+.. code-block:: luau  
+
+   DRMManager.OwnsApp(id) -> string
+
+N/A. :raw-html:`<br />`
+``assetID`` The ID to the asset. :raw-html:`<br />`
+
+----
+
+.. code-block:: luau  
+
+   DRMManager.GetProductInfo(assetID:number) -> table?
+
+Returns info about an asset. :raw-html:`<br />`
+``assetID`` The ID to the asset. :raw-html:`<br />`
+
+----
+
+.. code-block:: luau  
+
+   DRMManager.PromptPurchase(assetID:number) -> bool
+
+Prompts the player to buy an asset. :raw-html:`<br />`
+``assetID`` The ID to the asset. :raw-html:`<br />`
+
+----
+
+.. code-block:: luau  
+
+   DRMManager.PromptGamePassPurchase(gamepassID:number) -> bool
+
+Prompts the player to buy a gamepass. :raw-html:`<br />`
+``gamepassID`` The ID to the gamepass. :raw-html:`<br />`
+
+----
+
+.. code-block:: luau  
+
+   DRMManager.OwnsGamePass(gamepassID:number) -> bool
+
+Check if the player own a gamepass. :raw-html:`<br />`
+``gamepassID`` The ID to the gamepass. :raw-html:`<br />`
+
+----
+
+
+
+
+
+
+
+LEFCharEncode
+==========
+
+.. code-block:: luau  
+
+   LEFCharEncode.Encrypt(Text:string) -> bool
+
+Encrypts a string so it can be saved/written to a file. :raw-html:`<br />`
+``Text`` The string you want to encrypt. :raw-html:`<br />`
+
+----
+
+.. code-block:: luau  
+
+   LEFCharEncode.Decrypt(Text:string) -> bool
+
+Decrypts an encrypted string. :raw-html:`<br />`
+``Text`` The string you want to decrypt. :raw-html:`<br />`
+
+----
+
+
+
+
+
+
+
 ExecutableHost
 ==========
 
 .. code-block:: luau  
 
-  number ExecutableHost.readlef(data:string) -> 
+    ExecutableHost.readlef(data:string) -> number
 
 This function reads LEF files
 
@@ -809,7 +980,7 @@ This function reads LEF files
 
 .. code-block:: luau  
 
-  string ExecutableHost.createlef(code:string, admin:bool, publisher:string, env:table) -> 
+    ExecutableHost.createlef(code:string, admin:bool, publisher:string, env:table) -> string
 
 This function creates new LEF files
 
@@ -817,7 +988,7 @@ This function creates new LEF files
 
 .. code-block:: luau  
 
-  string ExecutableHost.createlefraw(code:string, admin:bool, publisher:string) -> 
+    ExecutableHost.createlefraw(code:string, admin:bool, publisher:string) -> string
 
 This function creates new LEF files
 
@@ -825,11 +996,55 @@ This function creates new LEF files
 
 .. code-block:: luau  
 
-  number ExecutableHost.selftest() -> 
+    ExecutableHost.selftest() -> number
 
 ``nil``
 
 ----
+
+
+
+
+
+
+
+
+Executor
+==========
+
+.. code-block:: luau  
+
+  Executor.compile(source, env, strip) -> number
+
+``nil``
+
+----
+
+.. code-block:: luau  
+
+  Executor.run(compiled, env, strip) -> number
+
+``nil``
+
+----
+
+.. code-block:: luau  
+
+  Executor.innerCompile(source, env, strip) -> number
+
+``nil``
+
+----
+
+.. code-block:: luau  
+
+  Executor.innerRun(compiled, env, strip) -> number
+
+``nil``
+
+----
+
+
 
 
 
@@ -840,7 +1055,7 @@ Http
 
 .. code-block:: luau  
 
-  unknown Http.HttpGet(url, nocache, headers, contentType, requestType) -> 
+    Http.HttpGet(url, nocache, headers, contentType, requestType) -> unknown
 
 This function makes http Get requests
 
@@ -848,7 +1063,7 @@ This function makes http Get requests
 
 .. code-block:: luau  
 
-  unknown Http.HttpPost(url, data, content_type, compress, headers) -> 
+    Http.HttpPost(url, data, content_type, compress, headers) -> unknown
 
 This function makes http Post requests
 
@@ -856,7 +1071,7 @@ This function makes http Post requests
 
 .. code-block:: luau  
 
-  string Http.JSONEncode(data:table) -> 
+    Http.JSONEncode(data:table) -> string
 
 This function JSON encodes tables to strings and returns them
 
@@ -864,11 +1079,14 @@ This function JSON encodes tables to strings and returns them
 
 .. code-block:: luau  
 
-  table Http.JSONDecode(data:string) -> 
+    Http.JSONDecode(data:string) -> table
 
 This function JSON decodes JSON encoded tables and returns a table
 
 ----
+
+
+
 
 
 
@@ -879,7 +1097,7 @@ EnvTable
 
 .. code-block:: luau  
 
-  nil EnvTable.nil() -> 
+    EnvTable.nil() -> nil
 
 ``nil``
 
