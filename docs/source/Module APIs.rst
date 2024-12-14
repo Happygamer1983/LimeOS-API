@@ -848,7 +848,7 @@ Returns a copy of the log table.
 
 .. code-block:: luau  
 
-   SystemLogs.LogDump() -> table
+   SystemLogs.LogDump() -> nil
 
 Creates a dump file of all logs, can be found at ``/root/dmp``.
 
