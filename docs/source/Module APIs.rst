@@ -23,6 +23,7 @@ FileSystem
     FileSystem.GetPartitions() -> table
 
 Returns a table of all partitions in LimeOS.
+
 ----
 
 .. code-block:: luau  
@@ -30,6 +31,7 @@ Returns a table of all partitions in LimeOS.
     FileSystem.GetOSDriveLetter() -> string
 
 Returns the partition name where LimeOS is installed on.
+
 ----
 
 .. code-block:: luau  
@@ -38,6 +40,7 @@ Returns the partition name where LimeOS is installed on.
 
 Returns a partition based on an index number. :raw-html:`<br />`
 ``index`` The index number of a partition. (e.g., 2 will always get the 2nd partition) :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -46,6 +49,7 @@ Returns a partition based on an index number. :raw-html:`<br />`
 
 Returns a partition based on a string name. :raw-html:`<br />`
 ``name`` The name of a partition. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -59,6 +63,7 @@ Creates a new partition table and returns it. :raw-html:`<br />`
 
 .. warning::
     Do not enter any value for ``IsOSDrive`` :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -67,6 +72,7 @@ Creates a new partition table and returns it. :raw-html:`<br />`
 
 Deletes a partition based on a string name. The function will return ``true`` if the deletion was successful :raw-html:`<br />`
 ``partition`` The name for the to be deleted partition. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -76,6 +82,7 @@ Deletes a partition based on a string name. The function will return ``true`` if
 Retuns ``true`` when there is still space on the partition for the provided data. :raw-html:`<br />`
 ``partition`` The name for the to be checked partition. :raw-html:`<br />`
 ``Data`` The partition data. :raw-html:`<br />`
+
 ----
 
 
@@ -90,6 +97,7 @@ Checks if the user has the same permissions as the provided permissions. :raw-ht
 
 .. warning::
     Do not enter any value for ``user``, only enter ``nil`` as a value :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -98,6 +106,7 @@ Checks if the user has the same permissions as the provided permissions. :raw-ht
 
 Returns the KB or MB size of a file object based on a provided path. :raw-html:`<br />`
 ``path`` The path to a file object. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -106,6 +115,7 @@ Returns the KB or MB size of a file object based on a provided path. :raw-html:`
 
 Checks if a file object exists based on a provided path. :raw-html:`<br />`
 ``path`` The path to a file object. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -114,6 +124,7 @@ Checks if a file object exists based on a provided path. :raw-html:`<br />`
 
 Returns a file object based on a provided path. :raw-html:`<br />`
 ``path`` The path to a file object. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -122,6 +133,7 @@ Returns a file object based on a provided path. :raw-html:`<br />`
 
 Returns the files inside a directory object based on a provided path. :raw-html:`<br />`
 ``path`` The string path to the directory object. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -136,6 +148,7 @@ Writes new data to a file object based on a provided path. :raw-html:`<br />`
 
 .. warning::
     Do not enter any value for ``user``, only enter ``nil`` as a value, ``plaintext`` is not intened to be used for normal files :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -151,6 +164,7 @@ Creates and retuns a new file object, and placing it in the provided path. :raw-
 
 .. warning::
     Do not enter any value for ``Owner``, exept if you want to set the owner to another user. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -165,6 +179,7 @@ Creates and retuns a new directory object, and placing it in the provided path. 
 
 .. warning::
     Do not enter any value for ``Owner``, exept if you want to set the owner to another user. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -173,6 +188,7 @@ Creates and retuns a new directory object, and placing it in the provided path. 
 
 Delets a file or directory object based on a provided path. :raw-html:`<br />`
 ``path`` The path to a file object. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -182,6 +198,7 @@ Delets a file or directory object based on a provided path. :raw-html:`<br />`
 Moves a file or directory object based on a provided path. :raw-html:`<br />`
 ``path`` The path to a file object. :raw-html:`<br />`
 ``newpath`` The path to where the file object gets moved to. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -191,6 +208,7 @@ Moves a file or directory object based on a provided path. :raw-html:`<br />`
 Checks if a file or directory object has a certain Attribute. :raw-html:`<br />`
 ``path`` The path to a file object. :raw-html:`<br />`
 ``attribute`` The attribute you want to check for. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -200,6 +218,7 @@ Checks if a file or directory object has a certain Attribute. :raw-html:`<br />`
 Creates or sets a new Attribute for a file or directory object. :raw-html:`<br />`
 ``path`` The path to a file object. :raw-html:`<br />`
 ``attribute`` The attribute you want to set. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -209,6 +228,7 @@ Creates or sets a new Attribute for a file or directory object. :raw-html:`<br /
 Returns a modified string, where the string past the last ``/`` is cut. :raw-html:`<br />`
 (e.g., "C:/System/Test" -> "C:/System") :raw-html:`<br />`
 ``path`` The path you want to check. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -218,6 +238,7 @@ Returns a modified string, where the string past the last ``/`` is cut. :raw-htm
 Returns a modified string, where the string before the last ``/`` is cut. :raw-html:`<br />`
 (e.g., "C:/System/Test" -> "Test") :raw-html:`<br />`
 ``path`` The path you want to modify. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -227,6 +248,7 @@ Returns a modified string, where the string before the last ``/`` is cut. :raw-h
 Returns the string file extension of a provided path. :raw-html:`<br />`
 (e.g., "C:/System/Test.txt" -> "txt") :raw-html:`<br />`
 ``path`` The path you want to modify. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -236,6 +258,7 @@ Returns the string file extension of a provided path. :raw-html:`<br />`
 Returns a modified string, where the last character is cut. :raw-html:`<br />`
 (e.g., "C:/System/" -> "C:/System") :raw-html:`<br />`
 ``path`` The path you want to modify. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -245,6 +268,7 @@ Returns a modified string, where the last character is cut. :raw-html:`<br />`
 Returns a modified string, where any non allowed characters are removed or replaced with underscores. :raw-html:`<br />`
 (e.g., "Hello #World" -> "Hello_World") :raw-html:`<br />`
 ``path`` The path you want to modify. :raw-html:`<br />`
+
 ----
 
 
@@ -264,6 +288,7 @@ Allowcates a specified amount of memory. :raw-html:`<br />`
 
 .. warning::
     Only enter a number for ``memamount`` :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -275,6 +300,7 @@ Deallocates a specified amount of memory. :raw-html:`<br />`
 
 .. warning::
     Only enter a number for ``memamount`` :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -283,6 +309,7 @@ Deallocates a specified amount of memory. :raw-html:`<br />`
 
 Recalculates and updates the required amount of memory for a provided application. :raw-html:`<br />`
 ``applicationdata`` The info table for an application. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -293,6 +320,7 @@ Returns the amount of system memory or the used amount of memory. :raw-html:`<br
 ``returnmax`` The toggle value for what it returns. :raw-html:`<br />`
 ``┗━>`` If ``true`` is provided, it returns the amount of memory the system has. :raw-html:`<br />`
 ``┗━>`` If nothing or ``false`` is provided, it returns the amount of used system memory. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -301,6 +329,7 @@ Returns the amount of system memory or the used amount of memory. :raw-html:`<br
 
 Calculates the amount of memory required for a specified app. :raw-html:`<br />`
 ``application`` The application you want to calculate the memory for :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -310,6 +339,7 @@ Calculates the amount of memory required for a specified app. :raw-html:`<br />`
 Crashes the system and creates a dump file. :raw-html:`<br />`
 ``errorcode`` The error code you see in the crash screen :raw-html:`<br />`
 Dump files can be found in ``/System/Dumps/``
+
 ----
 
 .. code-block:: luau  
@@ -317,6 +347,7 @@ Dump files can be found in ``/System/Dumps/``
    Kernel.SystemStart() -> nil
 
 Starts the system and loads everything required.
+
 ----
 
 .. code-block:: luau  
@@ -327,6 +358,7 @@ Shuts down or Reboots the system, also saves the file system. :raw-html:`<br />`
 ``systemrestart`` The toggle value for if it restarts. :raw-html:`<br />`
 ``┗━>`` If ``true`` is provided, it will reboot the system. :raw-html:`<br />`
 ``┗━>`` If nothing or ``false`` is provided, it shuts down and kicks the player. :raw-html:`<br />`
+
 ----
 
 
@@ -342,6 +374,7 @@ AccountManager
    AccountManager.GetCurrentUser() -> string
 
 Returns the currently logged-in user
+
 ----
 
 .. code-block:: luau  
@@ -352,6 +385,7 @@ Creates a new user account :raw-html:`<br />`
 ``username`` The name of the new user account. :raw-html:`<br />`
 ``pin`` The PIN number for the account, can be left empty. :raw-html:`<br />`
 ``permissions`` The permissions that the user will have, see :ref:`how to use permissions <PermissionsInfo>`. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -360,6 +394,7 @@ Creates a new user account :raw-html:`<br />`
 
 Deletes a user account. :raw-html:`<br />`
 ``username`` The name of the user account you want to delete. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -370,6 +405,7 @@ Updates the PIN number on a user account. :raw-html:`<br />`
 ``username`` The name of the user account you want to change the PIN for. :raw-html:`<br />`
 ``oldpin`` The current PIN number of the user account. :raw-html:`<br />`
 ``newpin`` The new PIN number of the user account. :raw-html:`<br />`
+
 ----
 
 
@@ -387,6 +423,7 @@ Connects the system to the LimeOS Network. :raw-html:`<br />`
 ``CustomIP`` A value for an custom IP. :raw-html:`<br />`
 ``┗━>`` If an IP is provided, it will use that IP. :raw-html:`<br />`
 ``┗━>`` If nothing is provided, it will generate you a IP if you dont already have one. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -394,6 +431,7 @@ Connects the system to the LimeOS Network. :raw-html:`<br />`
    NetworkManager.NetDisconnect() -> nil
 
 Disconnect the system from the LimeOS Network.
+
 ----
 
 .. code-block:: luau  
@@ -404,6 +442,7 @@ Sends data to an IP on a port. :raw-html:`<br />`
 ``ToIP`` The IP you want to send data to. :raw-html:`<br />`
 ``Port`` The Port you want to send the data too. :raw-html:`<br />`
 ``Data`` The data you want to send, can be anything exept instances. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -413,6 +452,7 @@ Sends data to an IP on a port. :raw-html:`<br />`
 Calls a connected function if any data is received on a specified Port. :raw-html:`<br />`
 ``Port`` The port you want to listen on for data. :raw-html:`<br />`
 ``callback`` The function you want the NetworkManager to call once you receive data. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -422,6 +462,7 @@ Calls a connected function if any data is received on a specified Port. :raw-htm
 Returns the connection status of the system. :raw-html:`<br />`
 ``true`` The system is connected. :raw-html:`<br />`
 ``false`` The system is not connected. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -429,6 +470,7 @@ Returns the connection status of the system. :raw-html:`<br />`
    NetworkManager.GetIP() -> bool
 
 Returns the IP the system is connected with. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -439,6 +481,7 @@ Toggels if you want a static or dynamic IP. :raw-html:`<br />`
 
 .. warning::
     This function is still ``W.I.P``. :raw-html:`<br />`
+
 ----
 
 
@@ -454,6 +497,7 @@ NotificationManager
 Sends a side notification with a Title and body :raw-html:`<br />`
 ``title`` The title of the notification. :raw-html:`<br />`
 ``body`` The body of the notification. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -471,6 +515,7 @@ Creates a popup with diffrent options :raw-html:`<br />`
 ``┗━>`` ``2`` is a Warning popup. :raw-html:`<br />`
 ``┗━>`` ``3`` is an Error popup, the popup text is also the color red. :raw-html:`<br />`
 ``callback`` A function that gets called if a Yes has been clicked on a Yes/No popup. :raw-html:`<br />`
+
 ----
 
 
@@ -491,6 +536,7 @@ Opens a save file dialog and returns the saved file. :raw-html:`<br />`
 ``StartPath`` The path where the save dialog should open in. :raw-html:`<br />`
 ``AllowedFileTypes`` The file extestions that are allowed to be saved. (e.g. ``{".txt", ".txt2"}``) :raw-html:`<br />`
 ``Data`` The data to be saved in the file. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -504,6 +550,7 @@ Opens a open file dialog and returns the opened file. :raw-html:`<br />`
 
 ``StartPath`` The path where the open dialog should open in. :raw-html:`<br />`
 ``ExtraText`` Some info text displayed in the dialog. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -514,6 +561,7 @@ Creates a dropdown menu and calls a callback function once a option has been sel
 ``OptionsFrame`` The UI object under which the dropdown menu apears. :raw-html:`<br />`
 ``Options`` The options the menu should have. (e.g. ``{"Option 1", "Option 2"}``) :raw-html:`<br />`
 ``callback`` The function that gets called once a option has been picked, this also returns the option picked. :raw-html:`<br />`
+
 ----
 
 
@@ -542,6 +590,7 @@ All avalible formats: :raw-html:`<br />`
 ``"week"``, :raw-html:`<br />`
 ``"month"``, :raw-html:`<br />`
 ``"year"``, :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -561,6 +610,7 @@ Here are some formats, you can see more at `os.date <https://create.roblox.com/d
 ``"%M" = Minute``, :raw-html:`<br />`
 ``"%S" = Second``, :raw-html:`<br />`
 ``"%p" = AM/PM``, :raw-html:`<br />`
+
 ----
 
 
@@ -577,6 +627,7 @@ ApplicationManager
    ApplicationManager.GetProcesses() -> nil
 
 Returns all open processes.
+
 ----
 
 .. code-block:: luau  
@@ -585,6 +636,7 @@ Returns all open processes.
 
 Executes LEF files.
 ``lefdata`` The LEF file data. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -595,6 +647,7 @@ Updates a property of a process to a new value. :raw-html:`<br />`
 ``processid`` The process ID of the process that you want to update. :raw-html:`<br />`
 ``toupdate`` The property you want to update. :raw-html:`<br />`
 ``data`` The new value for the property. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -604,6 +657,7 @@ Updates a property of a process to a new value. :raw-html:`<br />`
 Starts a new process and returns the newly created app.
 ``processname`` The name for your new process, use the :doc:`Built-in` when you are creating new process. :raw-html:`<br />`
 ``processdata`` The process ID of the process that you want to update. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -612,6 +666,7 @@ Starts a new process and returns the newly created app.
 
 Closes a process.
 ``processid`` The process ID of the process that you want to close. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -619,6 +674,7 @@ Closes a process.
    ApplicationManager.CloseAllProcesses() -> nil
 
 Closes all processes.
+
 ----
 
 
@@ -633,6 +689,7 @@ DesktopManager
    DesktopManager.LogOut() -> nil
 
 Logs the currently logged-in user out and returns him to the login screen.
+
 ----
 
 .. code-block:: luau  
@@ -640,6 +697,7 @@ Logs the currently logged-in user out and returns him to the login screen.
    DesktopManager.InitDesktop() -> nil
 
 Starts the desktop environment.
+
 ----
 
 .. code-block:: luau  
@@ -647,6 +705,7 @@ Starts the desktop environment.
    DesktopManager.LoginSetup() -> nil
 
 Starts the login screem environment.
+
 ----
 
 .. code-block:: luau  
@@ -657,6 +716,7 @@ Updates the desktop wallpaper.
 
 .. warning::
     This function is still ``W.I.P``. :raw-html:`<br />`
+
 ----
 
 
@@ -676,6 +736,7 @@ Creates a new registry key. :raw-html:`<br />`
 ``key`` The registry key path. :raw-html:`<br />`
 ``┗━>`` The key name is everything past the last ``/``, so ``/System/NewRegKey`` would have a key name of ``NewRegKey``. :raw-html:`<br />`
 ``data`` The data for the registry key. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -684,6 +745,7 @@ Creates a new registry key. :raw-html:`<br />`
 
 Deletes a registry key. :raw-html:`<br />`
 ``key`` The registry key path. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -693,6 +755,7 @@ Deletes a registry key. :raw-html:`<br />`
 Updates the data of a registry key to a new value. :raw-html:`<br />`
 ``key`` The registry key path. :raw-html:`<br />`
 ``data`` The new registry key data. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -701,6 +764,7 @@ Updates the data of a registry key to a new value. :raw-html:`<br />`
 
 Returns a registry key. :raw-html:`<br />`
 ``key`` The registry key path. :raw-html:`<br />`
+
 ----
 
 .. code-block:: luau  
@@ -708,6 +772,7 @@ Returns a registry key. :raw-html:`<br />`
    RegistryHandler.SaveRegistry() -> nil
 
 Saves the registry to a file.
+
 ----
 
 .. code-block:: luau  
@@ -715,6 +780,7 @@ Saves the registry to a file.
    RegistryHandler.LoadRegistry() -> nil
 
 Loads the registry from a file.
+
 ----
 
 .. code-block:: luau  
@@ -722,6 +788,7 @@ Loads the registry from a file.
    RegistryHandler.InitRegistry() -> nil
 
 Sets up the registry.
+
 ----
 
 
@@ -737,6 +804,7 @@ ExecutableHost
   number ExecutableHost.readlef(data:string) -> 
 
 This function reads LEF files
+
 ----
 
 .. code-block:: luau  
@@ -744,6 +812,7 @@ This function reads LEF files
   string ExecutableHost.createlef(code:string, admin:bool, publisher:string, env:table) -> 
 
 This function creates new LEF files
+
 ----
 
 .. code-block:: luau  
@@ -751,6 +820,7 @@ This function creates new LEF files
   string ExecutableHost.createlefraw(code:string, admin:bool, publisher:string) -> 
 
 This function creates new LEF files
+
 ----
 
 .. code-block:: luau  
@@ -758,6 +828,7 @@ This function creates new LEF files
   number ExecutableHost.selftest() -> 
 
 ``nil``
+
 ----
 
 
@@ -772,6 +843,7 @@ Http
   unknown Http.HttpGet(url, nocache, headers, contentType, requestType) -> 
 
 This function makes http Get requests
+
 ----
 
 .. code-block:: luau  
@@ -779,6 +851,7 @@ This function makes http Get requests
   unknown Http.HttpPost(url, data, content_type, compress, headers) -> 
 
 This function makes http Post requests
+
 ----
 
 .. code-block:: luau  
@@ -786,6 +859,7 @@ This function makes http Post requests
   string Http.JSONEncode(data:table) -> 
 
 This function JSON encodes tables to strings and returns them
+
 ----
 
 .. code-block:: luau  
@@ -793,6 +867,7 @@ This function JSON encodes tables to strings and returns them
   table Http.JSONDecode(data:string) -> 
 
 This function JSON decodes JSON encoded tables and returns a table
+
 ----
 
 
@@ -807,5 +882,6 @@ EnvTable
   nil EnvTable.nil() -> 
 
 ``nil``
+
 ----
 
