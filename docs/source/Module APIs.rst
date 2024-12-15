@@ -22,32 +22,16 @@ FileSystem
 
     .. code-block:: bash  
 
-        root
-        ├── sys
-        ├── bin
-        ├── boot
-        ├── dmp
-        ├── init
-        ├── menu
-        └── etc
-        users
-        └── app
-
-
-.. code-block:: bash  
-
-    root
-    ├── sys
-    ├── bin
-    ├── boot
-    ├── dmp
-    ├── init
-    ├── menu
-    └── etc
-    users
-    └── app
-
-
+        root : Root folder
+        ├── sys : System files
+        ├── bin : Terminal commands
+        ├── boot : Boot files/options
+        ├── dmp : Crash dumps
+        ├── init : Programs which autostart
+        ├── menu : Custom start menu entries
+        └── etc : Configuration files, etc.
+        users : User-specific data
+        └── app : Application data
 
 .. code-block:: luau  
 
