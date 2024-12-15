@@ -17,6 +17,37 @@ FileSystem
     Permissions should be formatted correctly, with multiple permissions separated by a hyphen (e.g., "R-W-D"). For single permissions, simply use the corresponding letter (e.g., "R" or "D"). :raw-html:`<br />` 
     These permissions govern actions such as reading, writing, deleting, and creating file objects. :raw-html:`<br />`
 
+.. note::  
+    The FileSystem has a linux like folder structure. :raw-html:`<br />` 
+
+    .. code-block:: bash  
+
+        root
+        ├── sys
+        ├── bin
+        ├── boot
+        ├── dmp
+        ├── init
+        ├── menu
+        └── etc
+        users
+        └── app
+
+
+.. code-block:: bash  
+
+    root
+    ├── sys
+    ├── bin
+    ├── boot
+    ├── dmp
+    ├── init
+    ├── menu
+    └── etc
+    users
+    └── app
+
+
 
 .. code-block:: luau  
 
@@ -641,7 +672,7 @@ Here are some formats, you can see more at `os.date <https://create.roblox.com/d
 
 
 
-ApplicationManager
+ApplicationHandler
 ==========
 
 .. code-block:: luau  
