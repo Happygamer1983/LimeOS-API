@@ -13,7 +13,8 @@ To use these modules and the function in them load them ``loadlib()``.
 FileSystem
 ==========
 .. note::  
-    The FileSystem module utilizes four distinct permissions: ``R = Read, W = Write, D = Delete, and A = Admin``. :raw-html:`<br />` 
+    The FileSystem module utilizes four distinct permissions: :raw-html:`<br />` 
+    ``R = Read, W = Write, D = Delete, and A = Admin``. :raw-html:`<br />` 
     Permissions should be formatted correctly, with multiple permissions separated by a hyphen (e.g., "R-W-D"). For single permissions, simply use the corresponding letter (e.g., "R" or "D"). :raw-html:`<br />` 
     These permissions govern actions such as reading, writing, deleting, and creating file objects. :raw-html:`<br />`
 
@@ -22,16 +23,16 @@ FileSystem
 
     .. code-block:: bash  
 
-        root : Root folder
-        ├── sys : System files
-        ├── bin : Terminal commands
-        ├── boot : Boot files/options
-        ├── dmp : Crash dumps
-        ├── init : Programs which autostart
-        ├── menu : Custom start menu entries
-        └── etc : Configuration files, etc.
-        users : User-specific data
-        └── app : Application data
+        root      : Root folder
+        ├── sys   : System files
+        ├── bin   : Terminal commands
+        ├── boot  : Boot files/options
+        ├── dmp   : Crash dumps
+        ├── init  : Programs which autostart
+        ├── menu  : Custom start menu entries
+        └── etc   : Configuration files, etc.
+        users     : User-specific data
+        └── app   : Application data
 
 .. code-block:: luau  
 
