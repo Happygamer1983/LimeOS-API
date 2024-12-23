@@ -83,9 +83,10 @@ When we press the button we'll create a .txt file in the users directory and sen
     local OSDriveLetter = FileSystem.GetOSDriveLetter() -- Here we get the drive letter that LimeOS has been installed on, cause that can chnage
     local CurrentUser = AccountManager.GetCurrentUser() -- Here we get the currently loggedin user
     local FileName = "Tutorial File.txt" -- You can change this to anything
+    local FilePath = OSDriveLetter..":/users/"..CurrentUser.."/"..FileName
 
-    FileSystem.CreateFile(OSDriveLetter..":/System/Users/"..CurrentUser.."/"..FileName, "txt", "R-W") -- Here we create our File and set some properties, like the permissions
-    FileSystem.WriteFile(OSDriveLetter..":/System/Users/"..CurrentUser.."/"..FileName, "This is some data for the file!") -- Here we add some data to the file
+    FileSystem.CreateFile(FilePath, "txt", "R-W") -- Here we create our File and set some properties, like the permissions
+    FileSystem.WriteFile(FilePath, "This is some data for the file!") -- Here we add some data to the file
 
     NotificationManager.SendNotification("Tutorial", "New File created!") -- Send a notification that a file was created
   end)
@@ -111,9 +112,10 @@ Now lets put everthing together
     local OSDriveLetter = FileSystem.GetOSDriveLetter()
     local CurrentUser = AccountManager.GetCurrentUser()
     local FileName = "Tutorial File.txt"
+    local FilePath = OSDriveLetter..":/users/"..CurrentUser.."/"..FileName
 
-    FileSystem.CreateFile(OSDriveLetter..":/System/Users/"..CurrentUser.."/"..FileName, "txt", "R-W")
-    FileSystem.WriteFile(OSDriveLetter..":/System/Users/"..CurrentUser.."/"..FileName, "This is some data for the file!")
+    FileSystem.CreateFile(FilePath, "txt", "R-W")
+    FileSystem.WriteFile(FilePath, "This is some data for the file!")
 
     NotificationManager.SendNotification("Tutorial", "New File created!")
   end)
@@ -122,9 +124,9 @@ Advanced functions
 ==================
 
 
-Smth
+Test
 ----
 
-Smth 2
+Test2
 ~~~~~~
 
