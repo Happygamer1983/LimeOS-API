@@ -153,15 +153,15 @@ Just fill out the ``MetaData`` table and CommandName, then run it in the script 
 .. code-block:: luau 
 
   local Http = loadlib("Http")
-	local FileSystem = loadlib("FileSystem")
-	local MetaData = {
-		Help = "", -- The help text for the help command
-		Visible = true, -- Is the command visible to the help command?
-	}
-	local CommandName = "" -- Needs to be the same as the command name / .bin file name
-			
-	FileSystem.CreateFile(FileSystem.GetOSDriveLetter()..":/root/bin/meta/"..CommandName..".meta", "metadata", "R-W-D") -- Creates the .meta file
-	FileSystem.WriteFile(FileSystem.GetOSDriveLetter()..":/root/bin/meta/"..CommandName..".meta", Http.JSONEncode(MetaData)) -- writes the metadata to the file
+  local FileSystem = loadlib("FileSystem")
+  local MetaData = {
+    Help = "", -- The help text for the help command
+    Visible = true, -- Is the command visible to the help command?
+  }
+  local CommandName = "" -- Needs to be the same as the command name / .bin file name
+        
+  FileSystem.CreateFile(FileSystem.GetOSDriveLetter()..":/root/bin/meta/"..CommandName..".meta", "metadata", "R-W-D") -- Creates the .meta file
+  FileSystem.WriteFile(FileSystem.GetOSDriveLetter()..":/root/bin/meta/"..CommandName..".meta", Http.JSONEncode(MetaData)) -- writes the metadata to the file
 
 And now you have your own working Terminal Command! :raw-html:`<br />` 
 
