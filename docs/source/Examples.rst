@@ -130,7 +130,7 @@ Creating Terminal Commands
 --------------------------
 
 In LimeOS 3.2 and above you can create your own Terminal commands, heres how you can do that! :raw-html:`<br />` 
-LimeOS commands are stored in form of ``.bin`` files in the ``/root/bin`` folder. :raw-html:`<br />` 
+LimeOS commands are stored in form of ``.bin`` files in the ``/root/bin/`` folder. :raw-html:`<br />` 
 They also have ``.meta`` files, metadata files store some info about the command, like the text that gets displayed when you type ``help`` :raw-html:`<br />` 
 :raw-html:`<br />` 
 First lets see how we can make our command file, for this example we create a command that creates a file at a given path. :raw-html:`<br />` 
@@ -148,7 +148,7 @@ Thats it, a very simple Terminal command! :raw-html:`<br />`
 :raw-html:`<br />` 
 Now save that script in ``/root/bin/``, the name of the file is also the name of the command. :raw-html:`<br />` 
 The last thing needed is the ``.meta`` file, heres a script to generate a ``.meta`` file. :raw-html:`<br />` 
-Just fill out the ``MetaData`` table and CommandName, then run it in the script editor. :raw-html:`<br />` 
+Just fill out the ``MetaData`` table and ``CommandName``, then run it in the script editor. :raw-html:`<br />` 
 
 .. code-block:: luau 
 
