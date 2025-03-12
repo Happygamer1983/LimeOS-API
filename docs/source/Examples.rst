@@ -165,6 +165,13 @@ Just fill out the ``MetaData`` table and ``CommandName``, then run it in the scr
 
 And now you have your own working Terminal Command! :raw-html:`<br />` 
 
+
+Creating Custom File extestions
+-------------------------------
+
+Creating Custom Desktop Environment
+-----------------------------------
+
 Test
 ----
 

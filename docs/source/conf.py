@@ -7,7 +7,7 @@ copyright = '2024 Happygamer1983'
 author = 'Happygamer1983'
 
 release = '3'
-version = '3.2.0'
+version = '3.3.0'
 
 # -- General configuration
 

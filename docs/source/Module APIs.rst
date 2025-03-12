@@ -23,15 +23,16 @@ FileSystem
 
     .. code-block:: bash  
 
-        root      : Root folder
+        root      
         ├── sys   : System files
         ├── bin   : Terminal commands
         ├── boot  : Boot files/options
         ├── dmp   : Crash dumps
         ├── init  : Programs which autostart
         ├── menu  : Custom start menu entries
-        └── etc   : Configuration files, etc.
-        users     : User-specific data
+        ├── etc   : Configuration files, etc.
+        └── de    : Files for custom DEs
+        users     
         └── app   : Application data
 
 Partition Functions
@@ -802,7 +803,7 @@ Closes all processes. :raw-html:`<br />`
 DesktopEnvironment
 ==========
 
-.. info::
+.. note::
     When creating your own DE your module needs to have these functions! :raw-html:`<br />`
 
 .. code-block:: luau  
@@ -872,7 +873,7 @@ Removes a tab from the taskbar :raw-html:`<br />`
 ConsoleManager
 ==========
 
-.. info::
+.. note::
     These functions are only relevant to you when creating your own commands. :raw-html:`<br />`
 
 .. code-block:: luau  
