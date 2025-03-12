@@ -34,13 +34,8 @@ FileSystem
         users     : User-specific data
         └── app   : Application data
 
-.. code-block:: luau  
-
-    FileSystem.GetPartitions() -> table
-
-Returns a table of all partitions in LimeOS.
-
-----
+Partition Functions
+-------------------
 
 .. code-block:: luau  
 
@@ -52,7 +47,15 @@ Returns the partition name where LimeOS is installed on.
 
 .. code-block:: luau  
 
-   FileSystem.GetPartitionByIndex(index:number) -> table
+    FileSystem.GetPartitions() -> table
+
+Returns a table of all partitions in LimeOS.
+
+----
+
+.. code-block:: luau  
+
+   FileSystem.GetPartitionByIndex(index:number) -> table or bool, string
 
 Returns a partition based on an index number. :raw-html:`<br />`
 ``index`` The index number of a partition. (e.g., 2 will always get the 2nd partition) :raw-html:`<br />`
@@ -61,33 +64,10 @@ Returns a partition based on an index number. :raw-html:`<br />`
 
 .. code-block:: luau  
 
-   FileSystem.GetPartitionByName(name:string) -> table
+   FileSystem.GetPartitionByName(name:string) -> table or bool, string
 
 Returns a partition based on a string name. :raw-html:`<br />`
 ``name`` The name of a partition. :raw-html:`<br />`
-
-----
-
-.. code-block:: luau  
-
-   FileSystem.CreatePartition(name:string, PartitionSize:number, IsOSDrive:bool) -> table
-
-Creates a new partition table and returns it. :raw-html:`<br />`
-``name`` The name of the new partition. :raw-html:`<br />`
-``PartitionSize`` The partition size in MB for the new partition. :raw-html:`<br />`
-``IsOSDrive`` A bool value, that marks if LimeOS is installed on that partition. :raw-html:`<br />`
-
-.. warning::
-    Do not enter any value for ``IsOSDrive`` :raw-html:`<br />`
-
-----
-
-.. code-block:: luau  
-
-   FileSystem.DelPartition(partition:string) -> bool
-
-Deletes a partition based on a string name. The function will return ``true`` if the deletion was successful :raw-html:`<br />`
-``partition`` The name for the to be deleted partition. :raw-html:`<br />`
 
 ----
 
@@ -101,6 +81,31 @@ Retuns ``true`` when there is still space on the partition for the provided data
 
 ----
 
+.. code-block:: luau  
+
+   FileSystem.CreatePartition(name:string, PartitionSize:number, IsOSDrive:bool) -> table or bool, string
+
+Creates a new partition table and returns it. :raw-html:`<br />`
+``name`` The name of the new partition. :raw-html:`<br />`
+``PartitionSize`` The partition size in MB for the new partition. :raw-html:`<br />`
+``IsOSDrive`` A bool value, that marks if LimeOS is installed on that partition. :raw-html:`<br />`
+
+.. warning::
+    Do not enter any value for ``IsOSDrive`` :raw-html:`<br />`
+
+----
+
+.. code-block:: luau  
+
+   FileSystem.DelPartition(partition:string) -> bool, string
+
+Deletes a partition based on a string name. The function will return ``true`` if the deletion was successful :raw-html:`<br />`
+``partition`` The name for the to be deleted partition. :raw-html:`<br />`
+
+----
+
+File OP Helper Functions
+------------------------
 
 .. code-block:: luau  
 
@@ -118,7 +123,7 @@ Checks if the user has the same permissions as the provided permissions. :raw-ht
 
 .. code-block:: luau  
 
-   FileSystem.CalculateObjectSize(path:string) -> number
+   FileSystem.CalculateObjectSize(path:string) -> string
 
 Returns the KB or MB size of a file object based on a provided path. :raw-html:`<br />`
 ``path`` The path to a file object. :raw-html:`<br />`
@@ -136,7 +141,7 @@ Checks if a file object exists based on a provided path. :raw-html:`<br />`
 
 .. code-block:: luau  
 
-   FileSystem.GetFile(path:string) -> table
+   FileSystem.GetFile(path:string) -> table or bool, string
 
 Returns a file object based on a provided path. :raw-html:`<br />`
 ``path`` The path to a file object. :raw-html:`<br />`
@@ -145,16 +150,19 @@ Returns a file object based on a provided path. :raw-html:`<br />`
 
 .. code-block:: luau  
 
-   FileSystem.GetFiles(path:string) -> table
+   FileSystem.GetFiles(path:string) -> table or bool, string
 
 Returns the files inside a directory object based on a provided path. :raw-html:`<br />`
 ``path`` The string path to the directory object. :raw-html:`<br />`
 
 ----
 
+File OP Functions
+-----------------
+
 .. code-block:: luau  
 
-   FileSystem.WriteFile(path:string, data:string, user:string, plaintext:bool) -> bool
+   FileSystem.WriteFile(path:string, data:string, user:string, plaintext:bool) -> bool, string
 
 Writes new data to a file object based on a provided path. :raw-html:`<br />`
 ``path`` The path to a file object. :raw-html:`<br />`
@@ -169,7 +177,7 @@ Writes new data to a file object based on a provided path. :raw-html:`<br />`
 
 .. code-block:: luau  
 
-   FileSystem.CreateFile(path:string, type:string, permissions:string, Owner:string) -> table
+   FileSystem.CreateFile(path:string, type:string, permissions:string, Owner:string) -> table or bool, string
 
 Creates and retuns a new file object, and placing it in the provided path. :raw-html:`<br />`
 ``path`` The path to a file object. :raw-html:`<br />`
@@ -185,7 +193,7 @@ Creates and retuns a new file object, and placing it in the provided path. :raw-
 
 .. code-block:: luau  
 
-   FileSystem.CreateDirectory(path:string, permissions:string, Owner:string) -> table
+   FileSystem.CreateDirectory(path:string, permissions:string, Owner:string) -> table or bool, string
 
 Creates and retuns a new directory object, and placing it in the provided path. :raw-html:`<br />`
 ``path`` The path to a directory object. :raw-html:`<br />`
@@ -200,7 +208,7 @@ Creates and retuns a new directory object, and placing it in the provided path. 
 
 .. code-block:: luau  
 
-   FileSystem.DeleteObject(path:string) -> bool
+   FileSystem.DeleteObject(path:string) -> bool, string
 
 Delets a file or directory object based on a provided path. :raw-html:`<br />`
 ``path`` The path to a file object. :raw-html:`<br />`
@@ -209,17 +217,20 @@ Delets a file or directory object based on a provided path. :raw-html:`<br />`
 
 .. code-block:: luau  
 
-   FileSystem.MoveObject(path:string, newpath:string) -> bool
+   FileSystem.XCopy(path:string, newpath:string) -> bool, string
 
-Moves a file or directory object based on a provided path. :raw-html:`<br />`
-``path`` The path to a file object. :raw-html:`<br />`
-``newpath`` The path to where the file object gets moved to. :raw-html:`<br />`
+Copyies a file or dir to another location. :raw-html:`<br />`
+``path`` The path to a file/dir. :raw-html:`<br />`
+``newpath`` The new path for the file/dir, you can also rename the file/dir eg. ``../../NewName.txt``. :raw-html:`<br />`
 
 ----
 
+FS Helper Functions
+-------------------
+
 .. code-block:: luau  
 
-   FileSystem.HasAttribute(path:string, attribute:string) -> bool
+   FileSystem.HasAttribute(path:string, attribute:string) -> bool, string
 
 Checks if a file or directory object has a certain Attribute. :raw-html:`<br />`
 ``path`` The path to a file object. :raw-html:`<br />`
@@ -229,11 +240,12 @@ Checks if a file or directory object has a certain Attribute. :raw-html:`<br />`
 
 .. code-block:: luau  
 
-   FileSystem.SetAttribute(path:string, attribute:string) -> table
+   FileSystem.SetAttribute(path:string, attribute:string, action:string) -> bool, string
 
-Creates or sets a new Attribute for a file or directory object. :raw-html:`<br />`
+Updates the Attributes of a file. :raw-html:`<br />`
 ``path`` The path to a file object. :raw-html:`<br />`
-``attribute`` The attribute you want to set. :raw-html:`<br />`
+``attribute`` The attribute you want to set/remove. :raw-html:`<br />`
+``action`` If you wan to ``add`` or ``remove`` the attribute. :raw-html:`<br />`
 
 ----
 
@@ -597,6 +609,71 @@ Creates a dropdown menu and calls a callback function once a option has been sel
 
 ----
 
+.. code-block:: luau  
+
+   ExtraUIElements.OpenColorPicker(callback:function, cancelcallback:function, confirmcallback:function) -> nil
+
+Opens a new window with a color picker. :raw-html:`<br />`
+``callback`` . :raw-html:`<br />`
+``cancelcallback`` . :raw-html:`<br />`
+``confirmcallback`` . :raw-html:`<br />`
+
+----
+
+.. code-block:: luau  
+
+   ExtraUIElements.CreatePrefabUI(Parent:instance, Size:udim2, Position:udim2, UI:string) -> nil
+
+Creates a premade UI. :raw-html:`<br />`
+``Parent`` The Parent of the new UI object. :raw-html:`<br />`
+``Size`` The size of the UI object. :raw-html:`<br />`
+``Position`` The position of the UI object. :raw-html:`<br />`
+``UI`` The name of the premade UI. :raw-html:`<br />`
+
+----
+
+.. code-block:: luau  
+
+   ExtraUIElements.CreateSlider(Parent:instance, Position:udim2, Size:udim2, MinValue:number, MaxValue:number, callback:function) -> nil
+
+Creates a Slider with a Min and Max value. :raw-html:`<br />`
+``Parent`` The Parent of the slider. :raw-html:`<br />`
+``Position`` The position of the slider. :raw-html:`<br />`
+``Size`` The size of the slider. :raw-html:`<br />`
+``MinValue`` The minimum value that the slider can go to. :raw-html:`<br />`
+``MaxValue`` The maximum value that the slider can go to. :raw-html:`<br />`
+``callback`` The function that gets called when the slider value changes :raw-html:`<br />`
+
+----
+
+.. code-block:: luau  
+
+   ExtraUIElements.CreateCheckBox(BoxParent:instances, Position:udim2, Size:udim2, StartingState:bool, callback:function) -> nil
+
+Creates a checkbox UI object. :raw-html:`<br />`
+``BoxParent`` The Parent of the checkbox. :raw-html:`<br />`
+``Position`` The position of the checkbox. :raw-html:`<br />`
+``Size`` The size of the checkbox. :raw-html:`<br />`
+``StartingState`` The state the checkbox starts. :raw-html:`<br />`
+``callback`` The function that gets called when the checkbox state changes :raw-html:`<br />`
+
+----
+
+.. code-block:: luau  
+
+   ExtraUIElements.CreateCheckBoxWithText(BoxParent:instance, Text:string, TextFieldSize:udim2, Position:udim2, StartingState:bool, callback:function) -> nil
+
+Creates a checkbox UI object with text on the left side. :raw-html:`<br />`
+``BoxParent`` The Parent of the checkbox. :raw-html:`<br />`
+``Text`` The text next to the checkbox. :raw-html:`<br />`
+``TextFieldSize`` The size of the text. :raw-html:`<br />`
+``Position`` The position of the checkbox. :raw-html:`<br />`
+``Size`` The size of the checkbox. :raw-html:`<br />`
+``StartingState`` The state the checkbox starts. :raw-html:`<br />`
+``callback`` The function that gets called when the checkbox state changes :raw-html:`<br />`
+
+----
+
 
 
 
@@ -702,7 +779,7 @@ Starts a new process and returns the newly created app.
 
    ApplicationManager.ExitProcess(processid:string) -> nil
 
-Closes a process.
+Closes a process. :raw-html:`<br />`
 ``processid`` The process ID of the process that you want to close. :raw-html:`<br />`
 
 ----
@@ -711,7 +788,7 @@ Closes a process.
 
    ApplicationManager.CloseAllProcesses() -> nil
 
-Closes all processes.
+Closes all processes. :raw-html:`<br />`
 
 ----
 
@@ -722,46 +799,98 @@ Closes all processes.
 
 
 
-DesktopManager
+DesktopEnvironment
 ==========
 
+.. info::
+    When creating your own DE your module needs to have these functions! :raw-html:`<br />`
+
 .. code-block:: luau  
 
-   DesktopManager.LogOut() -> nil
+   DesktopEnvironment.UnloadDesktop() -> nil
 
-Logs the currently logged-in user out and returns him to the login screen.
+Unloads the Desktop. :raw-html:`<br />`
 
 ----
 
 .. code-block:: luau  
 
-   DesktopManager.InitDesktop() -> nil
+   DesktopEnvironment.LoadDesktop() -> nil
 
-Starts the desktop environment.
-
-----
-
-.. code-block:: luau  
-
-   DesktopManager.LoginSetup() -> nil
-
-Starts the login screem environment.
+Loads the Desktop. :raw-html:`<br />`
 
 ----
 
 .. code-block:: luau  
 
-   DesktopManager.UpdateWallpaper() -> nil
+   DesktopEnvironment.CreateLink(Name:string, Type:string, FilePath:string, Icon:string) -> nil	
 
-Updates the desktop wallpaper.
+Creates a new Icon on the current users desktop. :raw-html:`<br />`
+``Name`` The name of the desktop icon, this is also the text under the icon itself. :raw-html:`<br />`
+``Type`` The type of the link, like: ``(dir, LEF, etc)``. :raw-html:`<br />`
+``FilePath`` The path to the linked object, eg. a directory you want to open.. :raw-html:`<br />`
+``Icon`` The icon ID of the desktop icon. :raw-html:`<br />`
 
-.. warning::
-    This function is still ``W.I.P``. :raw-html:`<br />`
+----
+
+.. code-block:: luau  
+
+   DesktopEnvironment.ChangeTaskbarSize(NewSize:number) -> nil
+
+Changes the taskbar hight/size :raw-html:`<br />`
+``NewSize`` The new size in px of the taskbar. :raw-html:`<br />`
+
+----
+
+.. code-block:: luau  
+
+   DesktopEnvironment.AddTaskbarTab(AppName:string, ProcID:string, AppIcon:string) -> nil
+
+Adds a new tab to the taskbar :raw-html:`<br />`
+``AppName`` The name of the app, gets displayed on the tab itself. :raw-html:`<br />`
+``ProcID`` The process ID of the process. :raw-html:`<br />`
+``AppIcon`` The icon ID of the process for the icon in the tab. :raw-html:`<br />`
+
+----
+
+.. code-block:: luau  
+
+   DesktopEnvironment.RemoveTaskbarTab(ProcID:string) -> nil
+
+Removes a tab from the taskbar :raw-html:`<br />`
+``ProcID`` The process ID of the process. :raw-html:`<br />`
 
 ----
 
 
 
+
+
+
+
+
+ConsoleManager
+==========
+
+.. info::
+    These functions are only relevant to you when creating your own commands. :raw-html:`<br />`
+
+.. code-block:: luau  
+
+   ConsoleManager.CheckLocalPath(path:string) -> string
+
+Handles path proccesing  which enables shotcuts like ``./`` or ``../``. :raw-html:`<br />`
+And returns a real path. :raw-html:`<br />`
+
+----
+
+.. code-block:: luau  
+
+   ConsoleManager.PrintTable(table:table/string) -> string
+
+Either returns a formatted string based on the table or returns just the input if its not a table. :raw-html:`<br />`
+
+----
 
 
 
