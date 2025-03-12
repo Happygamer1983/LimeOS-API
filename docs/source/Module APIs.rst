@@ -615,9 +615,9 @@ Creates a dropdown menu and calls a callback function once a option has been sel
    ExtraUIElements.OpenColorPicker(callback:function, cancelcallback:function, confirmcallback:function) -> nil
 
 Opens a new window with a color picker. :raw-html:`<br />`
-``callback`` . :raw-html:`<br />`
-``cancelcallback`` . :raw-html:`<br />`
-``confirmcallback`` . :raw-html:`<br />`
+``callback`` Gets called when the color changes in the color picker. :raw-html:`<br />`
+``cancelcallback`` When the user picks a color". :raw-html:`<br />`
+``confirmcallback`` When the user canceles and closes the color picker. :raw-html:`<br />`
 
 ----
 
