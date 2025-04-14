@@ -128,74 +128,6 @@ Deletes a partition based on a string name. The function will return ``true`` if
 
 
 
-File OP Helper Functions
-------------------------
-
-These functions are helper functions for file operations.
-
-CheckPermissions
-~~~~~~~~~~~~~~~~
-
-.. code-block:: luau  
-
-   FileSystem.CheckPermissions(path:string, user:string, permissiontype:string) -> bool
-
-Checks if the user has the same permissions as the provided permissions. :raw-html:`<br />`
-``path`` The path to a file object. :raw-html:`<br />`
-``user`` The name of a user. :raw-html:`<br />`
-``permissiontype`` The permissions that will be checked for, see :ref:`how to use permissions <PermissionsInfo>`. :raw-html:`<br />`
-
-.. warning::
-    The ``user`` argument should be left at ``nil``. :raw-html:`<br />`
-
-
-CalculateObjectSize
-~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: luau  
-
-   FileSystem.CalculateObjectSize(path:string) -> string
-
-Returns the KB or MB size of a file object based on a provided path. :raw-html:`<br />`
-``path`` The path to a file object. :raw-html:`<br />`
-
-
-FileExists
-~~~~~~~~~~
-
-.. code-block:: luau  
-
-   FileSystem.FileExists(path:string) -> bool
-
-Checks if a file object exists based on a provided path. :raw-html:`<br />`
-``path`` The path to a file object. :raw-html:`<br />`
-
-
-GetFile
-~~~~~~~
-
-.. code-block:: luau  
-
-   FileSystem.GetFile(path:string) -> table or bool, string
-
-Returns a file object based on a provided path. :raw-html:`<br />`
-``path`` The path to a file object. :raw-html:`<br />`
-
-
-GetFiles
-~~~~~~~~
-
-.. code-block:: luau  
-
-   FileSystem.GetFiles(path:string) -> table or bool, string
-
-Returns the files inside a directory object based on a provided path. :raw-html:`<br />`
-``path`` The string path to the directory object. :raw-html:`<br />`yea
-
-
-
-
-
 File Operation Functions
 ------------------------
 
@@ -278,6 +210,73 @@ Copyies a file or dir to another location. :raw-html:`<br />`
 ``path`` The path to a file/dir. :raw-html:`<br />`
 ``newpath`` The new path for the file/dir, you can also rename the file/dir eg. ``../../NewName.txt``. :raw-html:`<br />`
 
+
+
+
+
+File OP Helper Functions
+------------------------
+
+These functions are helper functions for file operations.
+
+CheckPermissions
+~~~~~~~~~~~~~~~~
+
+.. code-block:: luau  
+
+   FileSystem.CheckPermissions(path:string, user:string, permissiontype:string) -> bool
+
+Checks if the user has the same permissions as the provided permissions. :raw-html:`<br />`
+``path`` The path to a file object. :raw-html:`<br />`
+``user`` The name of a user. :raw-html:`<br />`
+``permissiontype`` The permissions that will be checked for, see :ref:`how to use permissions <PermissionsInfo>`. :raw-html:`<br />`
+
+.. warning::
+    The ``user`` argument should be left at ``nil``. :raw-html:`<br />`
+
+
+CalculateObjectSize
+~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: luau  
+
+   FileSystem.CalculateObjectSize(path:string) -> string
+
+Returns the KB or MB size of a file object based on a provided path. :raw-html:`<br />`
+``path`` The path to a file object. :raw-html:`<br />`
+
+
+FileExists
+~~~~~~~~~~
+
+.. code-block:: luau  
+
+   FileSystem.FileExists(path:string) -> bool
+
+Checks if a file object exists based on a provided path. :raw-html:`<br />`
+``path`` The path to a file object. :raw-html:`<br />`
+
+
+GetFile
+~~~~~~~
+
+.. code-block:: luau  
+
+   FileSystem.GetFile(path:string) -> table or bool, string
+
+Returns a file object based on a provided path. :raw-html:`<br />`
+``path`` The path to a file object. :raw-html:`<br />`
+
+
+GetFiles
+~~~~~~~~
+
+.. code-block:: luau  
+
+   FileSystem.GetFiles(path:string) -> table or bool, string
+
+Returns the files inside a directory object based on a provided path. :raw-html:`<br />`
+``path`` The string path to the directory object. :raw-html:`<br />`yea
 
 
 
