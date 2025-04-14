@@ -15,12 +15,12 @@ The LimeOS filesytem uses 4 permissions. (``R = Read, W = Write, D = Delete, and
 These permissions need to be formatted correctly, multible permissions are separated by a hyphen (e.g. "R-W-D").
 For single permissions, simply use the corresponding letter (e.g. "R" or "D")
 
-When an functions fails, most of them return 2 values a bool and a string, the string being an error message. :raw-html:`<br />` 
+When a functions fails, most of them return 2 values a bool and a string, the string being an error message. :raw-html:`<br />` 
 The ``:number`` is the type the function expects as input.
 
 The LimeOS folder structure looks like this.
 
-.. code-block:: bash  
+.. code-block:: txt  
 
     root      
     ├── sys   : System files
