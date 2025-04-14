@@ -5,26 +5,44 @@ Welcome to the LimeOS 3 API
 .. role:: raw-html(raw)
     :format: html
 
-**This is the LimeOS 3 API**. :raw-html:`<br />`
-LimeOS 3 is the most advanced OS simulations on Roblox. :raw-html:`<br />`
-If you need more help or have questions, join our `Discord <https://discord.gg/DmxuDXrThg>`_! :raw-html:`<br />`
+**This is the LimeOS 3 API**.
 
-This API is for LimeOS version 3.3 :raw-html:`<br />`
+This documentation lists all avalible modules and functions.
+You can also find help on how to make apps or more complex things you can achieve by scripting in LimeOS!
+
+If you need more help or have questions, join our `Discord <https://discord.gg/DmxuDXrThg>`_!
+
+This API is for LimeOS version 3.3
 
 
 Contents
 --------
-:doc:`Built-in` :raw-html:`<br />`
-:doc:`Module APIs` :raw-html:`<br />`
-:doc:`Examples` :raw-html:`<br />`
+:doc:`Module Documentation` :raw-html:`<br />`
+:doc:`Tutorials` :raw-html:`<br />`
 
 .. toctree::
    :maxdepth: 2
    :hidden:
-   :caption: APIs
+   :caption: Module Documentation
 
-   /Built-in.rst
-   /Module APIs.rst
+   /APIs/Builtin.rst
+   /APIs/FileSystem.rst
+   /APIs/ExtraUIElements.rst
+   /APIs/NotificationManager.rst
+   /APIs/AccountManager.rst
+   /APIs/RegistryHandler.rst
+   /APIs/ApplicationHandler.rst
+   /APIs/NetworkManager.rst
+   /APIs/ClockManager.rst
+   /APIs/Kernel.rst
+   /APIs/ConsoleManager.rst
+   /APIs/DesktopEnvironment.rst
+   /APIs/SystemLogs.rst
+   /APIs/StringFiltering.rst
+   /APIs/ExecutableHost.rst
+   /APIs/LEFCharEncode.rst
+   /APIs/Executor.rst
+   /APIs/EnvTable.rst
 
 .. toctree::
    :maxdepth: 2
