@@ -2,14 +2,14 @@
 Welcome to the LimeOS 3 API
 ===========================
 
-.. role:: raw-html(raw)
-    :format: html
+**This is the LimeOS 3 API**.
 
-**This is the LimeOS 3 API**. :raw-html:`<br />`
-LimeOS 3 is the most advanced OS simulations on Roblox. :raw-html:`<br />`
-If you need more help or have questions, join our `Discord <https://discord.gg/DmxuDXrThg>`_! :raw-html:`<br />`
+This documentation lists all avalible modules and functions.
+You can also find help on how to make apps or more complex things you can acheave by scripting in LimeOS!
 
-This API is for LimeOS version 3.3 :raw-html:`<br />`
+If you need more help or have questions, join our `Discord <https://discord.gg/DmxuDXrThg>`_!
+
+This API is for LimeOS version 3.3
 
 
 Contents
