@@ -2,14 +2,19 @@
 Welcome to the LimeOS 3 API
 ===========================
 
-.. role:: raw-html(raw)
-    :format: html
+**This is the LimeOS 3 API**.
 
+<<<<<<< HEAD
 **This is the LimeOS 3 API**.
 
 This documentation lists all avalible modules and functions.
 You can also find help on how to make apps or more complex things you can achieve by scripting in LimeOS!
 
+=======
+This documentation lists all avalible modules and functions.
+You can also find help on how to make apps or more complex things you can acheave by scripting in LimeOS!
+
+>>>>>>> f79c7d5f59a1c562eb7dd02e4921cc7e35cd514a
 If you need more help or have questions, join our `Discord <https://discord.gg/DmxuDXrThg>`_!
 
 This API is for LimeOS version 3.3
