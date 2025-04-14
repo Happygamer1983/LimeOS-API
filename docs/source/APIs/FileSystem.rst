@@ -110,7 +110,8 @@ Creates a new partition table and returns it. :raw-html:`<br />`
 ``IsOSDrive`` A bool value, that marks if LimeOS is installed on that partition. :raw-html:`<br />`
 
 .. warning::
-    Do not enter any value for ``IsOSDrive`` :raw-html:`<br />`
+   The ``IsOSDrive`` argument should be left at ``nil``. :raw-html:`<br />`
+    
 
 
 DelPartition
@@ -145,7 +146,7 @@ Checks if the user has the same permissions as the provided permissions. :raw-ht
 ``permissiontype`` The permissions that will be checked for, see :ref:`how to use permissions <PermissionsInfo>`. :raw-html:`<br />`
 
 .. warning::
-    Do not enter any value for ``user``, only enter ``nil`` as a value :raw-html:`<br />`
+    The ``user`` argument should be left at ``nil``. :raw-html:`<br />`
 
 
 CalculateObjectSize
