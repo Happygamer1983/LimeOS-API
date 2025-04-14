@@ -70,7 +70,7 @@ Calls a connected function if any data is received on a specified Port. :raw-htm
 Config Functions
 ----------------
 
-NetDisconnect
+NetStatus
 ~~~~~~~~~~~~~
 
 .. code-block:: luau  
@@ -82,7 +82,7 @@ Returns the connection status of the system. :raw-html:`<br />`
 ``false`` The system is not connected. :raw-html:`<br />`
 
 
-NetDisconnect
+GetIP
 ~~~~~~~~~~~~~
 
 .. code-block:: luau  
@@ -92,7 +92,7 @@ NetDisconnect
 Returns the IP the system is connected with. :raw-html:`<br />`
 
 
-NetDisconnect
+ToggleStaticIP
 ~~~~~~~~~~~~~
 
 .. code-block:: luau  
