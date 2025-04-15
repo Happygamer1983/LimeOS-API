@@ -12,8 +12,8 @@ LimeOS commands are stored in form of ``.bin`` files in the ``/root/bin/`` folde
 They also have ``.meta`` files, metadata files store some info about the command, like the text that gets displayed when you type ``help`` :raw-html:`<br />` 
 :raw-html:`<br />` 
 
-Creating Terminal Commands
---------------------------
+Creating Bin Files
+------------------
 
 First lets see how we can make our command file, for this example we create a command that creates a file at a given path. :raw-html:`<br />` 
 

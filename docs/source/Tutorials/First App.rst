@@ -6,6 +6,8 @@ First Application
     :format: html
 
 Here you can learn how to create your own app via the Script Editor.
+While this Tutorial tries to explain things as best as possible, its recommended that you know some lua/luau.
+If you dont know lua/luau watch some YouTube videos on the basics.
 
 Creating an App
 ---------------
