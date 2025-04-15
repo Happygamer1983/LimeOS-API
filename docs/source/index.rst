@@ -42,6 +42,9 @@ Contents
 .. toctree::
    :maxdepth: 2
    :hidden:
-   :caption: Code Examples
+   :caption: Tutorials
 
-   /Examples.rst
+   /Tutorials/First App.rst
+   /Tutorials/Custom Termianl Commands.rst
+   /Tutorials/Custom File extensionsrst.rst
+   /Tutorials/Custom Desktop Environment.rst
